@@ -6,8 +6,8 @@ import (
 	"os"
 )
 
-// ./student/displayfile/quest8.txt
 func main() {
+	// ./student/displayfile/quest8.txt
 	args := os.Args[1:]
 	count := 0
 	for range args {
