@@ -1,2 +1,2 @@
-OUTPUT="$(ls -a -hatr --ignore='.??*' --ignore='.[^.]' --ignore='#*' --ignore='.*' --indicator-style=slash)"
+OUTPUT="$(ls -haAtr --ignore='.??*' --ignore='.[^.]' --ignore='#*' --ignore='.*' --indicator-style=slash --format=commas)"
 echo "${OUTPUT}"
