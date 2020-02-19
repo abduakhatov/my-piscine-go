@@ -9,5 +9,8 @@ func main() {
 	// piscine.IsNegative(-1)
 
 	// Task 5
-	piscine.PrintComb()
+	// piscine.PrintComb()
+	
+	// Task 6
+	piscine.PrintComb2()
 }
