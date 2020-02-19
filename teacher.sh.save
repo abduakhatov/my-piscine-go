@@ -1,0 +1,15 @@
+cd ./the-final-cl-test/mystery # todo change to training
+inter_id=$(head -n 179 streets/Buckingham_Place | tail -n 1 | cut -f 3 -d " " | tr -d "#")
+export interview_id=$inter_id
+echo $interview_id
+cat interviews/interview-$interview_id
+
+# get model and color
+model_n_color=$(grep -oP "Describes it as a\s+\K(\w.+\s).{0,2}" interviews/interview-699607 | cut -d " " -f 1-2)
+color=$model_n_color | cut -d " " -f 1
+model=$model_n_color | cut -d " " -f 2 | tr -d ","
+
+
+grep -A 5 -E "L337.*9" vehicles | grep -A 4 -B 1 $model | grep -A 3 -B 2 $color
+
+
