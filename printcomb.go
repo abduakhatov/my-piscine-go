@@ -12,7 +12,7 @@ func PrintComb() {
 					z01.PrintRune(i)
 					z01.PrintRune(j)
 					z01.PrintRune(k)
-					if k == max && j == k - 1 && i == j - 1 {
+					if k == max && j == k-1 && i == j-1 {
 						continue
 					} 
 					z01.PrintRune(',')
