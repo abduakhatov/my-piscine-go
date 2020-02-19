@@ -1,8 +1,8 @@
 package piscine
 
 import (
-	"github.com/01-edu/z01"
 	"fmt"
+	"github.com/01-edu/z01"
 )
 
 func PrintNbr(n int) {
