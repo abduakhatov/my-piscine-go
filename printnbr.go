@@ -1,13 +1,12 @@
-package main
+package piscine
 
 import (
 	"github.com/01-edu/z01"
 	"fmt"
 )
 
-func main() {
-	var num int = 123
-	t := fmt.Sprintf("%d", num)
+func PrintNbr(n int) {
+	t := fmt.Sprintf("%d", n)
 	// fmt.Printf(t) # also prints
 	slice := []rune(t)
 	for i := 0; i < len(slice); i++ {
