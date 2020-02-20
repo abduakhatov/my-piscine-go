@@ -28,8 +28,8 @@ func PrintNbr(n int) {
 	for i := 0; i < length; i++ {
 		z01.PrintRune(48 + rune(n_arr[i]))
 	}
+	z01.PrintRune('\n')
 }
-z01.PrintRune('\n')
 
 func main() {
 	PrintNbr(-123)
