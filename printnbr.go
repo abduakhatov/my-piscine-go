@@ -29,6 +29,7 @@ func PrintNbr(n int) {
 		z01.PrintRune(48 + rune(n_arr[i]))
 	}
 }
+z01.PrintRune('\n')
 
 func main() {
 	PrintNbr(-123)
