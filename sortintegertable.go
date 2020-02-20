@@ -1,7 +1,5 @@
 package piscine
 
-import "fmt"
-
 func SortIntegerTable(table []int) {
 	for i := 0; i < len(table)-1; i++ {
 		for j := i+1; j < len(table); j++ {
@@ -12,5 +10,5 @@ func SortIntegerTable(table []int) {
 			}
 		}
 	}
-	fmt.Println(table)
+	// fmt.Println(table)
 }
