@@ -2,7 +2,7 @@ package piscine
 
 import "github.com/01-edu/z01"
 
-func get_length(previous string) int{
+func get_length(previous string) int {
 	counter := 0
 	for previous != "" {
 		previous = previous[1:]
