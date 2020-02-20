@@ -8,7 +8,7 @@ func BasicAtoi(s string) int {
 	}
 	result := 0
 	pow := 1
-	for i := count-1; i >= 0; i-- {
+	for i := count - 1; i >= 0; i-- {
 		result += ((int(_s[i]) - 48) * pow)
 		pow *= 10
 	}
