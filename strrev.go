@@ -1,7 +1,7 @@
 package piscine
 
 func StrRev(s string) string {
-	length := 0 
+	length := 0
 	for range s {
 		length += 1
 	}
