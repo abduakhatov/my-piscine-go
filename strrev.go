@@ -1,12 +1,13 @@
 package piscine
 
 func StrRev(s string) string {
+	length := 0 
+	for range s {
+		length += 1
+	}
 	res := []byte(s)
-
-	
-
-	for i := 0; i < len(s); i++ {
-		res[i] = s[len(s)-i-1]
+	for ind := range s {
+		res[ind] = s[length-ind-1]
 	}
 	return string(res)
 }
