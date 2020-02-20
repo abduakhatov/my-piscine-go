@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func BasicAtoi2(s string) int {
 	_s := []byte(s)
 	count := 0
