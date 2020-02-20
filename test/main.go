@@ -15,6 +15,7 @@ func main() {
 	s6 := "-1234"
 	s7 := "++1234"
 	s8 := "--1234"
+	s9 := "123-"
 
 	n := piscine.Atoi(s)
 	n2 := piscine.Atoi(s2)
@@ -24,6 +25,7 @@ func main() {
 	n6 := piscine.Atoi(s6)
 	n7 := piscine.Atoi(s7)
 	n8 := piscine.Atoi(s8)
+	n9 := piscine.Atoi(s9)
 
 	fmt.Println(n)
 	fmt.Println(n2)
@@ -33,4 +35,5 @@ func main() {
 	fmt.Println(n6)
 	fmt.Println(n7)
 	fmt.Println(n8)
+	fmt.Println(n9)
 }

@@ -16,7 +16,7 @@ func Atoi(s string) int {
 		if tmp >= 0 && tmp <= 9 {
 			result += (tmp * pow)
 			pow *= 10
-		} else if !adj_chars && (tmp == -5 || tmp == -3) {
+		} else if !adj_chars && ((tmp == -5 || tmp == -3) && i == 0) {
 			adj_chars = true
 			if tmp == -3 {
 				sign = -1
