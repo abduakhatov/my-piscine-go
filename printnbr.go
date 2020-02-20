@@ -6,28 +6,21 @@ func PrintNbr(n int) {
 	dot := 1
 	if n == 0 {
 		z01.PrintRune('0')
-		z01.PrintRune('\n')
 		return
 	}
 	if n < 0 {
 		dot *= -1
 		z01.PrintRune('-')
 	}
-	_n := n
-	length := 0
-	for _n*dot > 0 {
-		_n /= 10
-		length += 1
+	print_next(n, dot)
+}
+
+func print_next(n, dot int) {
+	if n == 0 {
+		return
 	}
-	n_arr := []int{}
-	digit := 0
-	for i := length - 1; n*dot >= 1; i-- {
-		digit = int((n % 10) * dot)
-		n /= 10
-		n_arr = append(n_arr, digit)
-	}
-	for i := length - 1; i >= 0; i-- {
-		z01.PrintRune(48 + rune(n_arr[i]))
-	}
-	z01.PrintRune('\n')
+	digit := int((n % 10) * dot)
+	_n := int(n / 10)
+	print_next(_n, dot)
+	z01.PrintRune(48 + rune(digit))
 }

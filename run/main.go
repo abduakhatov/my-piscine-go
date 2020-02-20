@@ -6,7 +6,13 @@ func main() {
 	piscine.PrintNbr(-123)
 	piscine.PrintNbr(0)
 	piscine.PrintNbr(123)
-	// x := []int{1, 2, 3, 4}
-	// x = append(x, 5)
-	// fmt.Println(x)
+
+
+	// piscine.PrintCombN(1)
+	// piscine.PrintCombN('\n')
+	// piscine.PrintCombN('\n')
+	// piscine.PrintCombN(3)
+	// piscine.PrintCombN('\n')
+	// piscine.PrintCombN('\n')
+	// piscine.PrintCombN(9)
 }

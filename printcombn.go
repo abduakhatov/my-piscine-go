@@ -4,9 +4,7 @@ import "github.com/01-edu/z01"
 
 func PrintCombN(n int) {
 	// z01.PrintRune(rune(n+48))
-	for i := '0'; i <= '9'; i++ {
-		next_digit(rune(n+48), i)
-	}
+	next_digit(rune(n+48), '0')
 	z01.PrintRune('\n')
 }
 
