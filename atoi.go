@@ -1,4 +1,4 @@
-package package
+package piscine
 
 func Atoi(s string) int {
 	_s := []byte(s)
