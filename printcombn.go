@@ -1,8 +1,8 @@
-package piscine
+package main
 
 import "github.com/01-edu/z01"
 
-func PrintNbr(n int) {
+func PrintCombN(n int) {
 	dot := 1
 	if n == 0 {
 		z01.PrintRune('0')
@@ -29,4 +29,11 @@ func PrintNbr(n int) {
 		z01.PrintRune(48 + rune(n_arr[i]))
 	}
 	z01.PrintRune('\n')
+}
+
+
+func main() {
+	PrintCombN(1)
+	PrintCombN(3)
+	PrintCombN(9)
 }
