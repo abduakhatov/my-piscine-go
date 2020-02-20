@@ -1,11 +1,14 @@
 package main
 
 import (
-    // "fmt"
-    piscine ".."
+	"fmt"
+	piscine ".."
 )
 
 func main() {
-	str := "Hello World!"
-	piscine.PrintStr(str)
+	a := 0
+	b := 1
+	piscine.Swap(&a, &b)
+	fmt.Println(a)
+	fmt.Println(b)
 }
