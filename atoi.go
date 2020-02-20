@@ -1,4 +1,4 @@
-package piscine
+package main
 
 import "fmt"
 
@@ -11,16 +11,23 @@ func Atoi(s string) int {
 	result := 0
 	pow := 1
 	tmp := 0
-
-	
-
+	sign := 1
+	adj_chars := false
 	for i := count - 1; i >= 0; i-- {
 		tmp = (int(_s[i]) - 48)
-		
-		result += (tmp * pow)
-		pow *= 10
+		if tmp >= 0 && tmp <= 9 {
+			result += (tmp * pow)
+			pow *= 10
+		} else if !adj_chars && (tmp == -5 || tmp == -3) {
+			adj_chars = true
+			if tmp == -3 {
+				sign = -1
+			}
+		} else {
+			return 0
+		}
 	}
-	return result
+	return result * sign
 }
 
 func main() {
