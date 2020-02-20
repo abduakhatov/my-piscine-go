@@ -26,7 +26,7 @@ func PrintNbr(n int) {
 		n /= 10
 		n_arr = append(n_arr, digit)
 	}
-	for i := length-1; i >= 0; i-- {
+	for i := length - 1; i >= 0; i-- {
 		z01.PrintRune(48 + rune(n_arr[i]))
 	}
 	z01.PrintRune('\n')
