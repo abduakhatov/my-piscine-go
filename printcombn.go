@@ -3,32 +3,23 @@ package main
 import "github.com/01-edu/z01"
 
 func PrintCombN(n int) {
-	dot := 1
-	if n == 0 {
-		z01.PrintRune('0')
-		return
-	}
-	if n < 0 {
-		dot *= -1
-		z01.PrintRune('-')
-	}
-	_n := n
-	length := 0
-	for _n*dot > 0 {
-		_n /= 10
-		length += 1
-	}
-	n_arr := make([]int, length)
-	digit := 0
-	for i := length - 1; n*dot >= 1; i-- {
-		digit = int((n % 10) * dot)
-		n /= 10
-		n_arr[i] = digit
-	}
-	for i := 0; i < length; i++ {
-		z01.PrintRune(48 + rune(n_arr[i]))
+	// z01.PrintRune(rune(n+48))
+	for i := '0'; i <= '9'; i++ {
+		next_digit(rune(n+48), i)
 	}
 	z01.PrintRune('\n')
+}
+
+func next_digit(n rune, start rune) {
+	if n == '0' {
+		z01.PrintRune(',')
+		z01.PrintRune(' ')
+		return
+	}
+	for i := start; i <= '9'; i++ {
+		z01.PrintRune(rune(i))
+		next_digit(n-1, i+1)
+	}
 }
 
 
