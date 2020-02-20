@@ -1,4 +1,4 @@
-package main
+package piscine
 
 import "github.com/01-edu/z01"
 
@@ -20,11 +20,4 @@ func next_digit(n rune, start rune) {
 		z01.PrintRune(rune(i))
 		next_digit(n-1, i+1)
 	}
-}
-
-
-func main() {
-	PrintCombN(1)
-	PrintCombN(3)
-	PrintCombN(9)
 }

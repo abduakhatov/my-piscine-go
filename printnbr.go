@@ -19,14 +19,14 @@ func PrintNbr(n int) {
 		_n /= 10
 		length += 1
 	}
-	n_arr := make([]int, length)
+	n_arr := []int{}
 	digit := 0
 	for i := length - 1; n*dot >= 1; i-- {
 		digit = int((n % 10) * dot)
 		n /= 10
-		n_arr[i] = digit
+		n_arr = append(n_arr, digit)
 	}
-	for i := 0; i < length; i++ {
+	for i := length-1; i >= 0; i-- {
 		z01.PrintRune(48 + rune(n_arr[i]))
 	}
 	z01.PrintRune('\n')
