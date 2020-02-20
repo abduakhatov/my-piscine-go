@@ -2,20 +2,37 @@ package piscine
 
 import "github.com/01-edu/z01"
 
-func PrintCombN(n int) {
-	// z01.PrintRune(rune(n+48))
-	next_digit(rune(n+48), '0')
-	z01.PrintRune('\n')
+func get_length(previous string) int{
+	counter := 0
+	for previous != "" {
+		previous = previous[1:]
+		counter += 1
+	}
+	return counter
 }
 
-func next_digit(n rune, start rune) {
-	if n == '0' {
-		z01.PrintRune(',')
-		z01.PrintRune(' ')
-		return
+func next_digit(start rune, previous string, n int) string {
+	result := ""
+	if n == 0 {
+		previous = ", " + previous
+		return previous
 	}
+
 	for i := start; i <= '9'; i++ {
-		z01.PrintRune(rune(i))
-		next_digit(n-1, i+1)
+		_prev := previous + string(i)
+		_i := i + 1
+		_len := n - 1
+		result += next_digit(_i, _prev, _len)
 	}
+	return result
+}
+
+func PrintCombN(n int) {
+	result := next_digit('0', "", n)
+	result = result[2:]
+	length := get_length(result)
+	for j := 0; j < length; j++ {
+		z01.PrintRune(rune(result[j]))
+	}
+	z01.PrintRune('\n')
 }
