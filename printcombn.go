@@ -2,37 +2,46 @@ package piscine
 
 import "github.com/01-edu/z01"
 
-func get_length(previous string) int {
-	counter := 0
-	for previous != "" {
-		previous = previous[1:]
-		counter += 1
+func ValidComb(comb int) bool {
+	for comb != 0 {
+		if comb >= 10 && comb % 10 <= (comb / 10) % 10 {
+			return false
+		}
+		comb /= 10
 	}
-	return counter
+	return true
 }
 
-func next_digit(start rune, previous string, n int) string {
-	result := ""
-	if n == 0 {
-		previous = ", " + previous
-		return previous
+func PrintNext(numb int) {
+	if numb == 0 {
+		z01.PrintRune('0')
+		return
 	}
-
-	for i := start; i <= '9'; i++ {
-		_prev := previous + string(i)
-		_i := i + 1
-		_len := n - 1
-		result += next_digit(_i, _prev, _len)
+	if numb >= 10 {
+		PrintNext(numb / 10)
 	}
-	return result
+	z01.PrintRune(48 + rune(numb % 10))
 }
 
 func PrintCombN(n int) {
-	result := next_digit('0', "", n)
-	result = result[2:]
-	length := get_length(result)
-	for j := 0; j < length; j++ {
-		z01.PrintRune(rune(result[j]))
+	postionLength := 1
+	for i := 1; i < n; i++ {
+		postionLength *= 10
+	}
+	st := false
+	for i := postionLength / 10; i <= postionLength * 9; i++ {
+		if !ValidComb(i) {
+			continue
+		}
+		if st {
+			z01.PrintRune(',')
+			z01.PrintRune(' ')
+		}
+		if i <= postionLength && postionLength != 1 {
+			z01.PrintRune('0')
+		}
+		PrintNext(i)
+		st = true
 	}
 	z01.PrintRune('\n')
 }
