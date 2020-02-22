@@ -20,7 +20,11 @@ func PrintNext(numb int) {
 	if numb >= 10 {
 		PrintNext(numb / 10)
 	}
-	z01.PrintRune(48 + rune(numb%10))
+	digit := '0'
+	for i := 0; i < numb%10; i++ {
+		digit++
+	}
+	z01.PrintRune(digit)
 }
 
 func PrintCombN(n int) {
