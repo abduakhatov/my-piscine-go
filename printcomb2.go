@@ -1,4 +1,4 @@
-package piscine
+package package
 
 import "github.com/01-edu/z01"
 
@@ -10,7 +10,7 @@ func PrintComb2() {
 	for i := _min; i <= _max; i++ {
 		for j := _min; j <= _max; j++ {
 			for k := i; k <= _max; k++ {
-				l = j + 1
+				l = j
 				for ; l <= _max; l++ {
 					// if i == k && (j > l || j == l) {
 					// 	continue
