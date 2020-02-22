@@ -47,13 +47,13 @@ func isLastNum(nb, pw int) bool {
     return false
 }
 
-func PrintCombN(n int) {
+func PrintCombN_alt(n int) {
     mxLn := 1
     for i := 1; i < n; i++ { // 100
         mxLn = 10
     }
 
-    for i := mxLn / 10; i <= mxLn9; i++ { // 91; <= 900
+    for i := mxLn / 10; i <= mxLn*9; i++ { // 91; <= 900
         if isValid(i) { // true
             if i <= mxLn && mxLn != 1 {
                 z01.PrintRune('0')
