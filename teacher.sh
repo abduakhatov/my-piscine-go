@@ -3,7 +3,7 @@ echo $(ls)
 echo ">>>"
 echo $(find -name "*mystery*")
 echo ">>>"
-for d in */ ; 
+for d in *mystery*/ ; 
 do 
     if [ -z "$d" ]
         then
