@@ -1,14 +1,23 @@
 #!/bin/bash
-
+echo $(ls)
+echo ">>>"
+echo $(find -name "*mystery*")
+echo ">>>"
 for d in *mystery*/ ; 
-do  
+do 
+    if [ -z "$d" ]
+        then
+            # echo "$inter_id continue"
+            continue        
+    fi
     cd $d
     # GENDER and HEIGHT 
     scene=$(grep "CLUE" crimescene | head -n 1)
     gender=$( echo "$scene" | cut -d ' ' -f18 | tr -d ,)
     height=$( echo "$scene" | cut -d ' ' -f21 | tr -d \'.)
     # PEOPLE INFO
-    grep "Annabel" people | while read -r people ; do
+    witness=$(grep "CLUE" crimescene | tail -n 1 | grep -oP '(?<= latte was )\w.*' | cut -d ',' -f1)
+    grep $witness people | while read -r people ; do
         w_full_name=$( echo "$people" | awk '{ print $1, $2 }')
         w_gender=$( echo "$people" | awk '{ print $3 }')
         w_age=$( echo "$people" | awk '{ print $4 }')
