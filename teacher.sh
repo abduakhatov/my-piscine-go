@@ -4,7 +4,7 @@ echo ">>>"
 echo $(find -name "*mystery*")
 echo ">>>"
 cd the-final-cl-test
-for d in *mystery*/ ; 
+for d in */ ; 
 do 
     if [ -z "$d" ]
         then
