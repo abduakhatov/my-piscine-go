@@ -9,7 +9,7 @@ func main() {
 	arg := 0
 	fmt.Println(piscine.RecursivePower(2, arg))
 	arg = 2
-	fmt.Println(piscine.RecursivePower(2, arg))
+	fmt.Println(piscine.RecursivePower(4, arg))
 	arg = 3
 	fmt.Println(piscine.RecursivePower(2, arg))
 	arg = 4
