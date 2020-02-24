@@ -12,10 +12,10 @@ func main() {
 	arg4 := 0
 	arg5 := 2147483647
 	arg6 := 1
-	fmt.Println(arg1, piscine.IsPrime(arg1))
-	fmt.Println(arg2, piscine.IsPrime(arg2))
-	fmt.Println(arg3, piscine.IsPrime(arg3))
-	fmt.Println(arg4, piscine.IsPrime(arg4))
-	fmt.Println(arg5, piscine.IsPrime(arg5))
-	fmt.Println(arg6, piscine.IsPrime(arg6))
+	fmt.Println(arg1, piscine.FindNextPrime(arg1))
+	fmt.Println(arg2, piscine.FindNextPrime(arg2))
+	fmt.Println(arg3, piscine.FindNextPrime(arg3))
+	fmt.Println(arg4, piscine.FindNextPrime(arg4))
+	fmt.Println(arg5, piscine.FindNextPrime(arg5))
+	fmt.Println(arg6, piscine.FindNextPrime(arg6))
 }
