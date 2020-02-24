@@ -1,12 +1,12 @@
 package piscine
 
 func Fibonacci(index int) int {
-	return SubFibonacci(index, 0, 1)
-}
-
-func SubFibonacci(index, st, nd int) int {
-	if index <= 1 {
-		return nd
+	if index < 0 {
+		return -1
+	} else if index == 1 {
+		return 1
+	} else if index == 0 {
+		return 0
 	}
-	return SubFibonacci(index-1, nd, st+nd)
+	return Fibonacci(index-1) + Fibonacci(index-2)
 }
