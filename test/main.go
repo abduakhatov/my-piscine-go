@@ -7,14 +7,14 @@ import (
 
 func main() {
 	arg := 0
-	fmt.Println(piscine.RecursiveFactorial(arg))
+	fmt.Println(piscine.RecursivePower(2, arg))
 	arg = 2
-	fmt.Println(piscine.RecursiveFactorial(arg))
+	fmt.Println(piscine.RecursivePower(2, arg))
 	arg = 3
-	fmt.Println(piscine.RecursiveFactorial(arg))
+	fmt.Println(piscine.RecursivePower(2, arg))
 	arg = 4
-	fmt.Println(piscine.RecursiveFactorial(arg))
-	arg = 5
-	fmt.Println(piscine.RecursiveFactorial(-8778634010981231238))
+	fmt.Println(piscine.RecursivePower(2, arg))
+	arg = -5
+	fmt.Println(piscine.RecursivePower(2, arg))
 
 }
