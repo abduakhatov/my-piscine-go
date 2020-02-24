@@ -6,9 +6,9 @@ import (
 )
 
 func main() {
-	arg1 := 4
-	arg2 := 3
-	arg3 := 16
+	arg1 := 1
+	arg2 := 0
+	arg3 := -16
 	arg4 := 32
 	arg5 := 19
 	arg6 := 121
