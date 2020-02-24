@@ -5,7 +5,7 @@ func Fibonacci(index int) int {
 }
 
 func SubFibonacci(index, st, nd int) int {
-	if index == 1 {
+	if index <= 1 {
 		return nd
 	}
 	return SubFibonacci(index-1, nd, st+nd)
