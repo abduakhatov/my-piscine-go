@@ -1,11 +1,14 @@
 package piscine
 
+// import "fmt"
+
 func IsPrintable(str string) bool {
 	if str == "" {
 		return false
 	}
 	for _, s := range str {
-		if !((s >= 65 && s <= 90) || (s >= 97 && s <= 122)) {
+		// fmt.Println(">", s, string(s))
+		if !(s >= 32) {
 			return false
 		}
 	}
