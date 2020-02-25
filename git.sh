@@ -1,9 +1,9 @@
 #!/bin/bash
 
 echo $(git status)
-echo "Adding files ..."
+echo "[Adding files ...]"
 git add .
-echo "Commit message: 'autopush'"
+echo "[Commit message: 'autopush']"
 git commit -m "autopush"
-echo "Pushing ..."
+echo "[Pushing ...]"
 git push
