@@ -5,7 +5,7 @@ func LastRune(s string) rune {
 
 	counter := 0
 	for range runes {
-		counter += 1 
+		counter += 1
 	}
 
 	return runes[counter-1]
