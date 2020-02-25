@@ -28,8 +28,7 @@ func PrintNbrInOrder(n int) {
 	if n < 0 {
 		return
 	}
-	counter := 1
-	sorted_arr := SortTable(ToIntArray(n, &counter))
+	sorted_arr := SortTable(ToIntArray(n))
 	for i := range sorted_arr {
 		z01.PrintRune(rune(i) + 49)
 	}
