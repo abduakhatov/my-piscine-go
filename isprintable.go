@@ -1,11 +1,11 @@
 package piscine
 
-func IsNumeric(str string) bool {
+func IsPrintable(str string) bool {
 	if str == "" {
 		return false
 	}
 	for _, s := range str {
-		if s < 48 || s > 57 {
+		if !((s >= 65 && s <= 90) || (s >= 97 && s <= 122)) {
 			return false
 		}
 	}
