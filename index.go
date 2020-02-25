@@ -4,7 +4,7 @@ func Index(s string, toFind string) int {
 	if toFind == "" {
 		return 0
 	}
-	ss := []rune(toFind)
+	ss := []rune(s)
 	bb := []rune(toFind)
 	for ind, val := range ss {
 		if val == bb[0] {

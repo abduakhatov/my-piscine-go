@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	fmt.Println("DPIHV+Gl#p*Sg", "HV+Gl#p*S" , " 3 - "    ,piscine.Index("DPIHV+Gl#p*Sg", "HV+Gl#p*S"))
 	fmt.Println("AeAe!v{E=?Xbv", "Ae!v{E=?Xb" , " 2 - "    ,piscine.Index("AeAe!v{E=?Xbv", "Ae!v{E=?Xb"))
 	fmt.Println("Hello!", "l" , " 2 - "    ,piscine.Index("Hello!", "l"))
 	fmt.Println("Salut!", "alu" , " 1 - "    ,piscine.Index("Salut!", "alu"))
