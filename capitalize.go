@@ -14,7 +14,7 @@ func Capitalize(s string) string {
 			}
 		} else if !isReset && 'A' <= val && val <= 'Z' {
 			str[ind] -= 'A' - 'a'
-		} else if !(('a' <= val && val <= 'z') || ('A' <= val && val <= 'Z')) {
+		} else if !(('a' <= val && val <= 'z') || ('A' <= val && val <= 'Z') || ('0' <= val && val <= '9')) {
 			isReset = true
 		}
 	}
