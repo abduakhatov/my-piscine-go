@@ -27,6 +27,8 @@ func ToIntArray(n int) []int {
 func PrintNbrInOrder(n int) {
 	if n < 0 {
 		return
+	} else if n == 0 {
+		z01.PrintRune(48)
 	}
 	arr := ToIntArray(n)
 	counter := 0
