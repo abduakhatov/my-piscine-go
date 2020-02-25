@@ -2,7 +2,7 @@ package piscine
 
 func NRune(s string, n int) rune {
 	for ind, val := range s {
-		if ind == n - 1 {
+		if ind == n-1 {
 			return rune(val)
 		}
 	}
