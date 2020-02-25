@@ -6,10 +6,6 @@ import (
 )
 
 func main() {
-	fmt.Println(piscine.IsPrintable("GPy5KO2b>3)NL"))
-	fmt.Println(piscine.IsPrintable("010203"))
-	fmt.Println(piscine.IsPrintable("01,02,03"))
-	fmt.Println(piscine.IsPrintable("Hello"))
-	fmt.Println(piscine.IsPrintable("Hello\n"))
-	fmt.Println(piscine.IsPrintable(""))
+	fmt.Println(piscine.ToUpper("Hello! How are you?"))
+	fmt.Println(piscine.ToUpper(""))
 }
