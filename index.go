@@ -1,5 +1,5 @@
 package piscine
-// import "fmt"
+
 func Length(str string) int {
 	counter := 0
 	for range str {
@@ -32,7 +32,6 @@ func Index(s string, toFind string) int {
 			}
 			counter = 0
 			ind = -1
-			
 		}
 	}
 	return ind
