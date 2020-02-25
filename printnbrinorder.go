@@ -6,9 +6,7 @@ func SortTable(table []int, counter int) []int {
 	for i := 0; i < counter-1; i++ {
 		for j := i + 1; j < counter; j++ {
 			if table[i] > table[j] {
-				tmp := table[i]
-				table[i] = table[j]
-				table[j] = tmp
+				table[i], table[j] = table[j], table[i]
 			}
 		}
 	}
