@@ -3,6 +3,7 @@ package piscine
 import "github.com/01-edu/z01"
 
 func SortTable(table []int) []int {
+	
 	for i := range table {
 		for j := range table {
 			if table[i] > table[j] {
