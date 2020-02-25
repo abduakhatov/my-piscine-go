@@ -1,11 +1,12 @@
 package main
 
 import (
-	"fmt"
 	piscine ".."
 )
 
 func main() {
-	fmt.Println(piscine.ToLower("Hello! How are you?"))
-	fmt.Println(piscine.ToLower("HELLO! HOW ARE YOU?"))
+	piscine.PrintNbrInOrder(321)
+	piscine.PrintNbrInOrder(0)
+	piscine.PrintNbrInOrder(321)
+	piscine.PrintNbrInOrder(-1234)
 }
