@@ -2,5 +2,11 @@ package piscine
 
 func LastRune(s string) rune {
 	runes := []rune(s)
-	return runes[len(runes)-1]
+
+	counter := 0
+	for range runes {
+		counter += 1 
+	}
+
+	return runes[counter-1]
 }
