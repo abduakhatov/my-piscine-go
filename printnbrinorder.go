@@ -3,8 +3,8 @@ package piscine
 import "github.com/01-edu/z01"
 
 func SortTable(table []int) []int {
-	for i := 0; i < len(table)-1; i++ {
-		for j := i + 1; j < len(table); j++ {
+	for i := range table {
+		for j := range table {
 			if table[i] > table[j] {
 				tmp := table[i]
 				table[i] = table[j]
@@ -28,7 +28,8 @@ func PrintNbrInOrder(n int) {
 	if n < 0 {
 		return
 	}
-	sorted_arr := SortTable(ToIntArray(n))
+	counter := 1
+	sorted_arr := SortTable(ToIntArray(n, &counter))
 	for i := range sorted_arr {
 		z01.PrintRune(rune(i) + 49)
 	}
