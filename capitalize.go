@@ -8,7 +8,7 @@ func Capitalize(s string) string {
 			if ('A' <= val && val <= 'Z') || ('0' <= val && val <= '9') {
 				isReset = false
 				continue
-			} else if isReset && 'a' <= val && val <= 'z' {
+			} else if 'a' <= val && val <= 'z' {
 				str[ind] -= 'a' - 'A'
 				isReset = false
 			}
