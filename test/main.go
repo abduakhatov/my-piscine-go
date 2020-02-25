@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	fmt.Println(piscine.ToUpper("Hello! How are you?"))
-	fmt.Println(piscine.ToUpper(""))
+	fmt.Println(piscine.ToLower("Hello! How are you?"))
+	fmt.Println(piscine.ToLower("HELLO! HOW ARE YOU?"))
 }
