@@ -25,6 +25,7 @@ package piscine
 // 	return true
 // }
 
+
 func EightQueens() {
 	var board [8][8]int
 	// var horiz [8]int
