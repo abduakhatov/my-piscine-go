@@ -5,7 +5,7 @@ func Capitalize(s string) string {
 	isReset := true
 	for ind, val := range str {
 		if isReset {
-			if 'A' <= val && val <= 'Z' {
+			if ('A' <= val && val <= 'Z') || ('0' <= val && val <= '9') {
 				isReset = false
 				continue
 			} else if isReset && 'a' <= val && val <= 'z' {
