@@ -13,7 +13,7 @@ func PrintHelp() {
 			"\t This flag inserts the string into the string passed as argument.\n" +
 			"--order\n" +
 			"  -o\n" +
-			"\t This flag will behave like a boolean, if it is called it will order the argument.")
+			"\t This flag will behave like a boolean, if it is called it will order the argument.\n")
 }
 
 func PrintRes(text string) {
