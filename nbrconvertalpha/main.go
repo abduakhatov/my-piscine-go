@@ -8,7 +8,7 @@ import (
 func main() {
 	arg := os.Args[1:]
 	charCase := 0
-	if len(arg) > 0 && arg[0] == "--upper" {
+	if arg[0] == "--upper" {
 		charCase = -32
 		arg = arg[1:]
 	}
