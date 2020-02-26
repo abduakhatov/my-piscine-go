@@ -9,11 +9,9 @@ import (
 func PrintHelp() {
 	fmt.Printf(
 		"--insert" +
-			"\n  -i\n" +
-			"\tThis flag inserts the string into the string passed as argument.\n" +
+			"\n  -i\n\tThis flag inserts the string into the string passed as argument.\n" +
 			"--order\n" +
-			"  -o\n" +
-			"\tThis flag will behave like a boolean, if it is called it will order the argument.")
+			"  -o\n\tThis flag will behave like a boolean, if it is called it will order the argument.")
 }
 
 func PrintRes(text string) {
