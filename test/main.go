@@ -1,11 +1,9 @@
 package main
 
 import (
-	"fmt"
 	piscine ".."
 )
 
 func main() {
-	toConcat := []string{"Hello!", " How", " are", " you?"}
-	fmt.Println(piscine.Join(toConcat, ":"))
+	piscine.PrintNbrInOrder(9223372036854775807)
 }
