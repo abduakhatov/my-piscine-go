@@ -10,5 +10,4 @@ func main() {
 	fmt.Println(piscine)
 	fmt.Println(piscine[12], len(piscine[12]))
 	fmt.Println(piscine[11], len(piscine[11]))
-	
 }
