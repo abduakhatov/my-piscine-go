@@ -1,10 +1,11 @@
 package main
 
 import (
+	"fmt"
 	piscine ".."
 )
 
 func main() {
-	test := []string{"Hello", "how", "are", "you?"}
-	piscine.PrintWordsTables(test)
+	str := "HelloHAhowHAareHAyou?HA"
+	fmt.Println(piscine.Split(str, "HA"))
 }
