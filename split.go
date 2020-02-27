@@ -1,6 +1,6 @@
 package piscine
 
-import "fmt"
+// import "fmt"
 
 func Split(str, charset string) []string {
 	char_len := get_length(charset)
@@ -12,13 +12,13 @@ func Split(str, charset string) []string {
 			size++
 		}
 	}
-	fmt.Println(size)
+	// fmt.Println(size)
 	resArr := make([]string, size+1)
 	i := 0
 	start := 0
 	ind := 0
 	for ; ind <= str_len-char_len; ind++ {
-		fmt.Println(str_len, "/", ind, "+", char_len, string(runes[ind:ind+char_len]))
+		// fmt.Println(str_len, "/", ind, "+", char_len, string(runes[ind:ind+char_len]))
 		if string(runes[ind:ind+char_len]) == charset {
 			resArr[i] = string(runes[start:ind])
 			i++
