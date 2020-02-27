@@ -15,7 +15,7 @@ func PrintRes(text string) {
 	for _, val := range str {
 		z01.PrintRune(val)
 	}
-	z01.PrintRune('-')
+	z01.PrintRune('\n')
 }
 
 func Sort(table []rune, count int) string {
@@ -42,7 +42,6 @@ func main() {
 		if val == "--order" || val == "-o" {
 			toOrder = true
 		} else if val == "--help" || val == "-h" {
-			help = false
 			PrintHelp()
 		} else if val[:1] == "-" {
 			if val[:3] == "-i=" {
@@ -53,10 +52,12 @@ func main() {
 		} else {
 			text += val
 		}
+		help = false
 	}
-	if text == "" && help {
+	if help {
 		PrintHelp()
-	} else {
+	} 
+	if !(text == "" || help) {
 		text += insert
 		if toOrder {
 			counter := 0
