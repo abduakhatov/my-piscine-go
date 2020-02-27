@@ -15,7 +15,7 @@ func PrintRes(text string) {
 	for _, val := range str {
 		z01.PrintRune(val)
 	}
-	z01.PrintRune('\n')
+	z01.PrintRune('-')
 }
 
 func Sort(table []rune, count int) string {
@@ -27,6 +27,7 @@ func Sort(table []rune, count int) string {
 				table[j] = tmp
 			}
 		}
+
 	}
 	return string(table)
 }
