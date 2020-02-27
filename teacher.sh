@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 echo $(ls)
 echo ">>>"
 echo $(find -name "*mystery*")

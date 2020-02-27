@@ -1,25 +1,43 @@
 package piscine
 
+import "fmt"
+
 func SplitWhiteSpaces(str string) []string {
 	runes := []rune(str)
-	counter := 1
-	chars := 0
+	count := 0
+	prevIsLeter := false
 	for _, val := range runes {
 		if val == '\n' || val == '\t' || val == ' ' {
-			counter++
+			if prevIsLeter {
+				count++
+				prevIsLeter = false
+			}
+		} else {
+			prevIsLeter = true
 		}
-		chars++
 	}
-	res_arr := make([]string, counter)
+	if prevIsLeter {
+		count++
+	}
+	resArr := make([]string, count)
+	fmt.Println(count, resArr, len(resArr))
 	i := 0
 	start := 0
+	prevIsLeter = false
 	for ind, val := range runes {
 		if val == '\n' || val == '\t' || val == ' ' {
-			res_arr[i] = string(runes[start:ind])
+			if prevIsLeter {
+				resArr[i] = string(runes[start:ind])
+				i++
+				prevIsLeter = false
+			}
 			start = ind + 1
-			i++
+		} else {
+			prevIsLeter = true
 		}
 	}
-	res_arr[i] = string(runes[start:])
-	return res_arr
+	if prevIsLeter {
+		resArr[i] = string(runes[start:])
+	}
+	return resArr
 }

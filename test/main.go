@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	str := "   "
+	str := "    1     "
 	fmt.Println(piscine.SplitWhiteSpaces(str))
 }
