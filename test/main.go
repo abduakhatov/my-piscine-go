@@ -1,11 +1,10 @@
 package main
 
 import (
-	"fmt"
 	piscine ".."
 )
 
 func main() {
-	str := "    1     "
-	fmt.Println(piscine.SplitWhiteSpaces(str))
+	test := []string{"Hello", "how", "are", "you?"}
+	piscine.PrintWordsTables(test)
 }
