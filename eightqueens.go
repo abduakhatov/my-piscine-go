@@ -16,8 +16,9 @@ func PrintSolution(result int[]) {
 	}
 }
 
-func PlaceQueen(horiz bool[], f_diag bool[], b_diag bool[], result int[], step int) bool {
-	for i :=0; i < 8; i++ {	
+func PlaceQueen(horiz bool[], f_diag bool[], b_diag bool[], result int[], step, i int) bool {
+	for i :=0; i < 8; i++ {
+		
 	}
 	return true
 }
