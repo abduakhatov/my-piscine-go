@@ -43,7 +43,7 @@ func main() {
 			toOrder = true
 		} else if val == "--help" || val == "-h" {
 			PrintHelp()
-		} else if val[:1] == "-" {
+		} else if val != "" && val[:1] == "-" {
 			if val[:3] == "-i=" {
 				insert = val[3:]
 			} else if val[:9] == "--insert=" {
