@@ -23,8 +23,8 @@ func Split(str, charset string) []string {
 			resArr[i] = string(runes[start:ind])
 			i++
 			start = ind + char_len
-		} 
-		if ind == str_len - char_len - 1 { 
+		}
+		if ind == str_len-char_len {
 			ind += char_len
 		}
 	}

@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
-	str := "HelloHAhowHAareHAyou?HA"
+	str := "HelloHAyou?"
 	fmt.Println(piscine.Split(str, "HA"))
 }
