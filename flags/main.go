@@ -56,7 +56,7 @@ func main() {
 	}
 	if help {
 		PrintHelp()
-	} 
+	}
 	if !(text == "" || help) {
 		text += insert
 		if toOrder {
