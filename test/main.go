@@ -6,7 +6,6 @@ import (
 )
 
 func main() {
-	fmt.Println(piscine.MakeRange(5, 10))
-	fmt.Println(piscine.MakeRange(10, 5))
-	// fmt.Println(piscine.MakeRange(-174401, -17442))
+	str := "Hello how are you?"
+	fmt.Println(piscine.SplitWhiteSpaces(str))
 }
