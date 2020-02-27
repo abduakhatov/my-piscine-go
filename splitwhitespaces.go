@@ -1,7 +1,5 @@
 package piscine
 
-import "fmt"
-
 func SplitWhiteSpaces(str string) []string {
 	runes := []rune(str)
 	count := 0
@@ -20,7 +18,6 @@ func SplitWhiteSpaces(str string) []string {
 		count++
 	}
 	resArr := make([]string, count)
-	fmt.Println(count, resArr, len(resArr))
 	i := 0
 	start := 0
 	prevIsLeter = false
