@@ -1,9 +1,11 @@
 package main
 
 import (
+	"fmt"
 	piscine ".."
 )
 
 func main() {
-	piscine.PrintNbrInOrder(9223372036854775807)
+	fmt.Println(piscine.AppendRange(5, 10))
+	fmt.Println(piscine.AppendRange(10, 5))
 }
