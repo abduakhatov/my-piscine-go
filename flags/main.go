@@ -38,11 +38,13 @@ func main() {
 	insert := ""
 	text := ""
 	help := true
+	print := true
 	for _, val := range args {
 		if val == "--order" || val == "-o" {
 			toOrder = true
 		} else if val == "--help" || val == "-h" {
 			PrintHelp()
+			print = false
 		} else if val != "" && val[:1] == "-" {
 			if val[:3] == "-i=" {
 				insert += val[3:]
@@ -56,8 +58,9 @@ func main() {
 	}
 	if help {
 		PrintHelp()
+		print = false
 	}
-	if !(help) {
+	if !help && print {
 		text += insert
 		if toOrder {
 			counter := 0
