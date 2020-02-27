@@ -45,9 +45,9 @@ func main() {
 			PrintHelp()
 		} else if val != "" && val[:1] == "-" {
 			if val[:3] == "-i=" {
-				insert = val[3:]
+				insert += val[3:]
 			} else if val[:9] == "--insert=" {
-				insert = val[9:]
+				insert += val[9:]
 			}
 		} else {
 			text += val
@@ -57,7 +57,7 @@ func main() {
 	if help {
 		PrintHelp()
 	}
-	if !(text == "" || help) {
+	if !(help) {
 		text += insert
 		if toOrder {
 			counter := 0
