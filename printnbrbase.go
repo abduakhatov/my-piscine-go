@@ -5,7 +5,7 @@ import (
 )
 
 func ParseToBase(nbr int, base []rune, size int, sign int) {
-	if nbr < size {
+	if nbr*sign < size {
 		z01.PrintRune(base[int(nbr*sign)])
 		return
 	}
@@ -15,7 +15,7 @@ func ParseToBase(nbr int, base []rune, size int, sign int) {
 
 func PrintNbrBase(nbr int, base string) {
 	size := 0
-	// isDifferent := false
+	isDifferent := false
 	for range base {
 		size++
 	}
@@ -24,8 +24,17 @@ func PrintNbrBase(nbr int, base string) {
 		z01.PrintRune('V')
 		return
 	}
-	// for i := 0; i < size-1; i++ {
-	// }
+	for i := 0; i < size-1; i++ {
+		if base[i] != base[i+1] {
+			isDifferent = true
+			break
+		}
+	}
+	if !isDifferent {
+		z01.PrintRune('N')
+		z01.PrintRune('V')
+		return
+	}
 	dot := 1
 	if nbr < 0 {
 		dot *= -1
