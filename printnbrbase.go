@@ -6,7 +6,7 @@ import (
 
 func ParseToBase(nbr int, base []rune, size int, sign int) {
 	if nbr*sign < size {
-		z01.PrintRune(base[int(nbr*sign)])
+		z01.PrintRune(base[nbr*sign])
 		return
 	}
 	ParseToBase(nbr/size, base, size, sign)
