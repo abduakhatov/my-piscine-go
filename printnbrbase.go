@@ -10,7 +10,7 @@ func ParseToBase(nbr int, base []rune, size int, sign int) {
 		return
 	}
 	ParseToBase(nbr/size, base, size, sign)
-	z01.PrintRune(base[int(nbr%size*sign)])
+	z01.PrintRune(base[nbr%size*sign])
 }
 
 func PrintNbrBase(nbr int, base string) {
