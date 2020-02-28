@@ -22,7 +22,6 @@ func main() {
 	z01.PrintRune('\n')
 	piscine.PrintNbrBase(125, "-ab")
 	z01.PrintRune('\n')
-	z01.PrintRune('>')
-	piscine.PrintNbrBase(-9223372036854775808, "")
+	piscine.PrintNbrBase(-9223372036854775808, "0123456789")
 	z01.PrintRune('\n')
 }
