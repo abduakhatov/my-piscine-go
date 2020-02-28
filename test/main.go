@@ -18,4 +18,6 @@ func main() {
 	z01.PrintRune('\n')
 	piscine.PrintNbrBase(-944556, "CHOUMIisdacat!")
 	z01.PrintRune('\n')
+	piscine.PrintNbrBase(968670, "WhoAmI?")
+	z01.PrintRune('\n')
 }

@@ -15,14 +15,9 @@ func ParseToBase(nbr int, base []rune, size int, sign int) {
 
 func PrintNbrBase(nbr int, base string) {
 	size := 0
-	isValid := false
-	for _, val := range base {
+	isValid := true
+	for range base {
 		size++
-		if !(('a' <= val && val <= 'z') || ('A' <= val && val <= 'Z') || ('0' <= val && val <= '9')) {
-			isValid = false
-			size = 0
-			break
-		}
 	}
 	if size < 2 {
 		z01.PrintRune('N')
@@ -30,9 +25,11 @@ func PrintNbrBase(nbr int, base string) {
 		return
 	}
 	for i := 0; i < size-1; i++ {
-		if base[i] != base[i+1] {
-			isValid = true
-			break
+		for j := i + 1; j < size; j++ {
+			if base[j] == base[i] {
+				isValid = false
+				break
+			}
 		}
 	}
 	if !isValid {
