@@ -16,7 +16,12 @@ func ParseToBase(nbr int, base []rune, size int, sign int) {
 func PrintNbrBase(nbr int, base string) {
 	size := 0
 	isValid := true
-	for range base {
+	for _, val := range base {
+		if val == '-' || val == '+' {
+			isValid = false
+			size = 0
+			break
+		}
 		size++
 	}
 	if size < 2 {
