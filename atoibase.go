@@ -1,12 +1,13 @@
 package piscine
 
-// func FromBase(s string, base []rune, size int) int {
-
-// }
-
-// func GetCharIndex(ch rune, base []rune) int {
-
-// }
+func GetCharIndex(ch rune, base []rune) int {
+	for ind, val := range base {
+		if val == ch {
+			return ind
+		}
+	}
+	return -1
+}
 
 func AtoiBase(s string, base string) int {
 	size := 0
@@ -33,12 +34,17 @@ func AtoiBase(s string, base string) int {
 	if !isValid {
 		return 0
 	}
-	// ss := []rune(s)
-	// bb := []rune(s)
-
-	// for ind, val := range ss {
-	// 	char_ind := GetCharIndex(val, bb)
-	// }
-
-	return 0
+	ss := []rune(s)
+	bb := []rune(base)
+	sSize := get_length(s)
+	baseNumb := 1
+	for i := 1; i < sSize; i++ {
+		baseNumb = baseNumb * size
+	}
+	res := 0
+	for _, val := range ss {
+		res += baseNumb * GetCharIndex(val, bb)
+		baseNumb /= size
+	}
+	return res
 }
