@@ -14,6 +14,11 @@ func ParseToBase(nbr int, base []rune, size int, sign int) {
 }
 
 func PrintNbrBase(nbr int, base string) {
+	if -9223372036854775808 <= nbr && 9223372036854775807 <= nbr {
+		z01.PrintRune('N')
+		z01.PrintRune('V')
+		return
+	}
 	size := 0
 	isValid := true
 	for _, val := range base {
