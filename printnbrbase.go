@@ -18,7 +18,7 @@ func PrintNbrBase(nbr int, base string) {
 	isValid := false
 	for _, val := range base {
 		size++
-		if !(('a' <= val && val <= 'z') || ('A' <= val && val <= 'Z') || ('0' <= val && val <= '9')) { 
+		if !(('a' <= val && val <= 'z') || ('A' <= val && val <= 'Z') || ('0' <= val && val <= '9')) {
 			isValid = false
 			size = 0
 			break
