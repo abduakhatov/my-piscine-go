@@ -1,10 +1,9 @@
 package main
 
-import piscine ".."
-
+import "fmt"
+import "os"
 
 func main() {
-	piscine.PrintCombN(1)
-	piscine.PrintCombN(3)
-	piscine.PrintCombN(9)
+	// arguments := os.Args
+	fmt.Println(os.Args)
 }

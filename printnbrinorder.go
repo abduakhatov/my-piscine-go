@@ -26,7 +26,7 @@ func PrintNbrInOrder(n int) {
 	if n < 0 {
 		return
 	} else if n == 0 {
-		z01.PrintRune(48)
+		z01.PrintRune('0')
 	}
 	arr := ToIntArray(n)
 	counter := 0
@@ -35,6 +35,6 @@ func PrintNbrInOrder(n int) {
 	}
 	sorted_arr := SortTable(arr, counter)
 	for _, v := range sorted_arr {
-		z01.PrintRune(rune(v) + 48)
+		z01.PrintRune(rune(v) + '0')
 	}
 }
