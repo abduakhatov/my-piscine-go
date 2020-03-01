@@ -1,8 +1,6 @@
 package piscine
 
 import (
-	"fmt"
-
 	"github.com/01-edu/z01"
 )
 
@@ -10,33 +8,39 @@ func PrintSolution(result [8]int) {
 	for _, val := range result {
 		z01.PrintRune(rune(val) + '0')
 	}
+	z01.PrintRune('\n')
 }
 
-func PlaceQueen(horiz [8]bool, f_diag [15]bool, b_diag [15]bool, result [8]int, loop int) bool {
-	if loop == 8 {
-		return false
+// PlaceQueen is
+func PlaceQueen(horiz [8]bool, fDiag [15]bool, bDiag [15]bool, result [8]int, col int) {
+	if col == 8 {
+		return
 	}
-	for i := 0; i < 8; i++ {
-		if horiz[i] || b_diag[loop+i] || f_diag[7-loop+i] {
+	for row := 0; row <= 7; row++ {
+		if horiz[row] || bDiag[row+col] || fDiag[7-row+col] {
 			continue
 		}
-		horiz[loop] = true
-		f_diag[7-i+loop] = true
-		b_diag[i+loop] = true
-		result[loop] = i + 1
-		if loop == 8 {
-			PrintSolution(result)
+		horizTmp := horiz
+		fDiagTmp := fDiag
+		bDiagTmp := bDiag
+		resulTmp := result
+
+		horizTmp[row] = true
+		fDiagTmp[7-row+col] = true
+		bDiagTmp[row+col] = true
+		resulTmp[col] = row + 1
+		if col == 7 {
+			PrintSolution(resulTmp)
+			return
 		}
-		PlaceQueen(horiz, f_diag, b_diag, result, loop+1)
+		PlaceQueen(horizTmp, fDiagTmp, bDiagTmp, resulTmp, col+1)
 	}
-	return false
 }
 
 func EightQueens() {
-	fmt.Println("start")
 	var horiz [8]bool
-	var f_diag [15]bool
-	var b_diag [15]bool
-	var result [8]int
-	PlaceQueen(horiz, f_diag, b_diag, result, 0)
+	var fDiag [15]bool
+	var bDiag [15]bool
+	var table [8]int
+	PlaceQueen(horiz, fDiag, bDiag, table, 0)
 }
