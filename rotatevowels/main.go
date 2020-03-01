@@ -14,13 +14,15 @@ func main() {
 	}
 	indexes := []int{}
 	length := 0
+	hasNext := false
 	for ind, val := range str {
 		if val == 'a' || val == 'e' || val == 'i' || val == 'o' || val == 'u' || val == 'A' || val == 'E' || val == 'I' || val == 'O' || val == 'U' {
 			indexes = append(indexes, ind-1)
 			length++
 		}
+		hasNext = true
 	}
-	if length == 0 {
+	if !hasNext {
 		z01.PrintRune('\n')
 		return
 	}
