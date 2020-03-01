@@ -1,8 +1,6 @@
 package piscine
 
 
-import "fmt"
-
 
 func ToBaseRec(nbr int, base []rune, size int) string {
 	if nbr < size {
