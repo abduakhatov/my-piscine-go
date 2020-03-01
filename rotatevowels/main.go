@@ -2,15 +2,14 @@ package main
 
 import (
 	"os"
-
 	"github.com/01-edu/z01"
 )
 
 func main() {
 	args := os.Args[1:]
-	str := " "
+	str := ""
 	for _, val := range args {
-		str = str + val + " "
+		str = str + " " + val
 	}
 	str = str[1:]
 	indexes := []int{}
@@ -28,4 +27,5 @@ func main() {
 	for _, val := range strRune {
 		z01.PrintRune(val)
 	}
+	z01.PrintRune('\n')
 }
