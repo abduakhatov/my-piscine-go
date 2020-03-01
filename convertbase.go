@@ -1,7 +1,5 @@
 package piscine
 
-
-
 func ToBaseRec(nbr int, base []rune, size int) string {
 	if nbr < size {
 		return string(base[nbr])
