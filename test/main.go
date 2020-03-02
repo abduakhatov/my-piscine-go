@@ -8,10 +8,10 @@ import (
 func f(a, b int) int {
 	if a > b {
 		return 1
-	} else if a < b {
-		return -1
+	} else if a == b {
+		return 0
 	}
-	return 0
+	return -1
 }
 
 
@@ -19,14 +19,21 @@ func main() {
 	tab1 := []int{0, 1, 2, 3, 4, 5}
 	tab2 := []int{0, 2, 1, 3}
 	tab3 := []int{-859847, 187500, 734084, 571713, 760402, 62627, -871811, 165954}
+	tab4 := []int{756385, -171886, -771699, 340189, -419189, -469002, 974294, 806120}
 
 	result1 := piscine.IsSorted(f, tab1)
-	result2 := piscine.IsSorted(f, tab2)
-	result3 := piscine.IsSorted(f, tab3)
-
 	fmt.Println(result1)
+	result2 := piscine.IsSorted(f, tab2)
 	fmt.Println(result2)
+	result3 := piscine.IsSorted(f, tab3)
 	fmt.Println(result3)
+	result4 := piscine.IsSorted(f, tab4)
+	fmt.Println(result4)
+
+	
+	
+	
+	
 }
 
 // IsSorted((func(int, int) int)(0x5545f0), 
