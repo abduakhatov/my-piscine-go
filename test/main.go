@@ -20,6 +20,8 @@ func main() {
 	tab2 := []int{0, 2, 1, 3}
 	tab3 := []int{-859847, 187500, 734084, 571713, 760402, 62627, -871811, 165954}
 	tab4 := []int{756385, -171886, -771699, 340189, -419189, -469002, 974294, 806120}
+	tab5 := []int{0, 0, 0, 0, 0, 0, 0}
+
 
 	result1 := piscine.IsSorted(f, tab1)
 	fmt.Println(result1)
@@ -29,6 +31,8 @@ func main() {
 	fmt.Println(result3)
 	result4 := piscine.IsSorted(f, tab4)
 	fmt.Println(result4)
+	result5 := piscine.IsSorted(f, tab5)
+	fmt.Println(result5)
 
 	
 	
