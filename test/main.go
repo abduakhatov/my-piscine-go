@@ -1,11 +1,8 @@
 package main
 
-import (
-	piscine ".."
-	"fmt"
-)
+import piscine ".."
 
 func main() {
-	result := piscine.ConvertBase("101011", "01", "0123456789")
-	fmt.Println(result)
+	arr := []int{1, 2, 3, 4, 5, 6}
+	piscine.ForEach(piscine.PrintNbr, arr)
 }
