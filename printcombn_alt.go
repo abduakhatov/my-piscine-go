@@ -2,7 +2,6 @@ package piscine
 
 import "github.com/01-edu/z01"
 
-
 func printNum(n int) { // n=12
 	if n == 0 {
 		z01.PrintRune('0')
@@ -42,7 +41,7 @@ func isLastNum(numb, n int) bool {
 // PrintCombN_alt prints all possible combinations of n different digits in ascending order.
 func PrintCombN_alt(n int) { // n=2; maxLen=10
 	maxLen := 1
-	for i := 1; i < n; i++ { 
+	for i := 1; i < n; i++ {
 		maxLen *= 10
 	}
 	for i := maxLen / 10; i <= maxLen*9; i++ { // i=12, i <= 90
@@ -61,5 +60,5 @@ func PrintCombN_alt(n int) { // n=2; maxLen=10
 }
 
 func main() {
-    PrintCombN_alt(2)
+	PrintCombN_alt(2)
 }

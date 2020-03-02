@@ -5,11 +5,23 @@ import (
 	piscine ".."
 )
 
+func f(a, b int) int {
+	if a > b {
+		return 1
+	} else if a < b {
+		return -1
+	}
+	return 0
+}
+
+
 func main() {
-	tab1 := []string{"Hello", "how", "are", "you"}
-	tab2 := []string{"This","1", "is", "4", "you"}
-	answer1 := piscine.CountIf(piscine.IsNumeric, tab1)
-	answer2 := piscine.CountIf(piscine.IsNumeric, tab2)
-	fmt.Println(answer1)
-	fmt.Println(answer2)
+	tab1 := []int{0, 1, 2, 3, 4, 5}
+	tab2 := []int{0, 2, 1, 3}
+
+	result1 := piscine.IsSorted(f, tab1)
+	result2 := piscine.IsSorted(f, tab2)
+
+	fmt.Println(result1)
+	fmt.Println(result2)
 }
