@@ -6,6 +6,7 @@ import (
 	"os"
 )
 
+// ./student/displayfile/quest8.txt
 func main() {
 	args := os.Args[1:]
 	count := 0
@@ -27,5 +28,4 @@ func main() {
 		return
 	}
 	fmt.Println(string(content))
-	fmt.Println()
 }
