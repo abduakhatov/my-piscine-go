@@ -1,7 +1,6 @@
 package main
 
 import (
-	// "fmt"
 	piscine ".."
 	"os"
 )
@@ -44,20 +43,20 @@ func MultplyOverflow(a, b, c int64) bool {
 }
 
 func PlusOverflow(a, b int64) bool {
-	// if a < 0 && c < 0 {
-	// 	return  a * b + c < 0
-	// } else if a > 0 && c > 0 {
-	// 	return a * b + c > 0
-	// }
+	if a < 0 && b < 0 {
+		return a+b < 0
+	} else if a > 0 && b > 0 {
+		return a+b > 0
+	}
 	return true
 }
 
 func MinusOverflow(a, b int64) bool {
-	// if a < 0 && c < 0 {
-	// 	return  a * b + c < 0
-	// } else if a > 0 && c > 0 {
-	// 	return a * b + c > 0
-	// }
+	if a < 0 && b < 0 {
+		return a-b < 0
+	} else if a > 0 && b > 0 {
+		return a-b > 0
+	}
 	return true
 }
 
@@ -99,7 +98,21 @@ func Plus(a, b string) {
 }
 
 func Minus(a, b string) {
-
+	aa, aBool := Atoi(a)
+	if !aBool {
+		PrintConsole("0")
+		return
+	}
+	bb, bBool := Atoi(b)
+	if !bBool {
+		PrintConsole("0")
+		return
+	}
+	if !MinusOverflow(aa, bb) {
+		PrintConsole("0")
+		return
+	}
+	PrintConsole(NbrToStr(aa - bb))
 }
 
 func Devide(a, b string) {
