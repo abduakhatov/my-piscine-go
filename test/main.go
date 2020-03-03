@@ -1,46 +1,50 @@
 package main
 
 import (
-	"fmt"
-	piscine ".."
+	// "fmt"
+	"os"
 )
 
-func f(a, b int) int {
-	if a > b {
-		return 1
-	} else if a == b {
-		return 0
+func MultplyOverflow(a, b, c int64) bool {
+	if a < 0 && c < 0 {
+		return  a * b + c < 0
+	} else if a > 0 && c > 0 {
+		return a * b + c > 0
 	}
-	return -1
+	return true
+	
 }
 
+func Atoi(nbr string) int64 {
+	var res int64 = 0
+	var sign int64 = 1
+	if nbr[0] == '-' {
+		nbr = nbr[1:]
+		sign *= -1
+	}
+	for _, digit := range nbr {
+		tmp := int64(digit - '0')*sign
+		if !MultplyOverflow(res, int64(10), tmp) {
+			return 0
+		}
+		res = res*10 + tmp
+	}
+	return res
+}
 
 func main() {
-	tab1 := []int{0, 1, 2, 3, 4, 5}
-	tab2 := []int{0, 2, 1, 3}
-	tab3 := []int{-859847, 187500, 734084, 571713, 760402, 62627, -871811, 165954}
-	tab4 := []int{756385, -171886, -771699, 340189, -419189, -469002, 974294, 806120}
-	tab5 := []int{0, 0, 0, 0, 0, 0, 0}
-
-
-	result1 := piscine.IsSorted(f, tab1)
-	fmt.Println(result1)
-	result2 := piscine.IsSorted(f, tab2)
-	fmt.Println(result2)
-	result3 := piscine.IsSorted(f, tab3)
-	fmt.Println(result3)
-	result4 := piscine.IsSorted(f, tab4)
-	fmt.Println(result4)
-	result5 := piscine.IsSorted(f, tab5)
-	fmt.Println(result5)
-
-	
-	
-	
-	
+	// fmt.Println("12345")
+	// fmt.Println(Atoi("12345"))
+	// fmt.Println()
+	// fmt.Println("9223372036854775807")
+	// fmt.Println(Atoi("9223372036854775807"))
+	// fmt.Println()
+	// fmt.Println("-9223372036854775809")
+	// fmt.Println(Atoi("-9223372036854775809"))
+	// fmt.Println()
+	// fmt.Println("9223372036854775808")
+	// fmt.Println(Atoi("9223372036854775808"))
+	// fmt.Println()
+	os.Stdout.Write("123")
+	os.Stdout.Close()
 }
-
-// IsSorted((func(int, int) int)(0x5545f0), 
-// []int{-859847, 187500, 734084, 571713, 760402, 62627, -871811, 165954}) == true
-//  instead of false
-// FAIL
