@@ -32,13 +32,18 @@ func NbrToStr(n int64) string {
 	return res + NbrToStrRec(n, dot)
 }
 
-func MultplyOverflow(a, b, c int64) bool {
+func AtoiOverflow(a, b, c int64) bool {
 	if a < 0 && c < 0 {
 		return a*b+c < 0
 	} else if a > 0 && c > 0 {
 		return a*b+c > 0
 	}
 	return true
+}
+
+func MultiplyOverflow(a, b, c int64) bool {
+	prod := a*b + c
+	return (prod/b)-c == a
 }
 
 func PlusOverflow(a, b int64) bool {
@@ -76,7 +81,7 @@ func Atoi(nbr string) (int64, bool) {
 	}
 	for _, digit := range nbr {
 		tmp := int64(digit-'0') * sign
-		if !MultplyOverflow(res, int64(10), tmp) {
+		if !AtoiOverflow(res, int64(10), tmp) {
 			return 0, false
 		}
 		res = res*10 + tmp
@@ -149,7 +154,8 @@ func Multiply(a, b string) {
 		PrintConsole("0")
 		return
 	}
-	if !MultplyOverflow(aa, bb, 0) {
+	// fmt.Println(aa, bb,  aa*bb, (1)/bb != aa, MultiplyOverflow(aa, bb))
+	if !MultiplyOverflow(aa, bb, 0) {
 		PrintConsole("0")
 		return
 	}
@@ -183,7 +189,7 @@ func main() {
 	if argsCount != 3 {
 		return
 	}
-	if !(piscine.IsNumeric(args[0]) || piscine.IsNumeric(args[2])) {
+	if !(piscine.IsNumeric(args[0]) && piscine.IsNumeric(args[2])) {
 		PrintConsole("0")
 	}
 	funcsArr := []func(string, string){Plus, Minus, Devide, Multiply, Mod}
