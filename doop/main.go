@@ -2,7 +2,6 @@ package main
 
 import (
 	// "fmt"
-	piscine ".."
 	"os"
 )
 
@@ -180,6 +179,22 @@ func Mod(a, b string) {
 	PrintConsole(NbrToStr(aa % bb))
 }
 
+func IsNumeric(str string) bool {
+	if str == "" {
+		return false
+	}
+	if str[0] == '-' || str[0] == '+' {
+		str = str[1:]
+	}
+	for _, s := range str {
+		if s < 48 || s > 57 {
+			return false
+		}
+	}
+	return true
+}
+
+
 func main() {
 	args := os.Args[1:]
 	argsCount := 0
@@ -189,7 +204,7 @@ func main() {
 	if argsCount != 3 {
 		return
 	}
-	if !(piscine.IsNumeric(args[0]) && piscine.IsNumeric(args[2])) {
+	if !(IsNumeric(args[0]) && IsNumeric(args[2])) {
 		PrintConsole("0")
 	}
 	funcsArr := []func(string, string){Plus, Minus, Devide, Multiply, Mod}
