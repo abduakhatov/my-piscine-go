@@ -8,7 +8,7 @@ import (
 func main() {
 
 	result := []string{"a", "A", "1", "b", "B", "2", "c", "C", "3"}
-	piscine.SortWordArr(result)
+	piscine.AdvancedSortWordArr(result, piscine.Compare)
 
 	fmt.Println(result)
 }
