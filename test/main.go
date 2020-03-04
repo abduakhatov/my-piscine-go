@@ -1,13 +1,13 @@
 package main
 
 import (
-	hackathon "hackathon"
-
+	piscine ".."
 	"github.com/01-edu/z01"
 )
 
 func main() {
-	result := hackathon.Rot14("Hello How are You")
+	// result := piscine.Rot14("Hello How are You")
+	result := piscine.Rot14("Hello How are You")
 	arrayRune := []rune(result)
 
 	for _, s := range arrayRune {

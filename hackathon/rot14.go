@@ -2,7 +2,7 @@ package hackathon
 
 import "fmt"
 
-func Rot14(str string) string {
+func _Rot14(str string) string {
 	res := ""
 	capital := 0
 	for _, val := range str {
