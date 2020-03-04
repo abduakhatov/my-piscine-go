@@ -66,7 +66,7 @@ func MinusOverflow(a, b int64) bool {
 		}
 		return a-b > 0
 	}
-	return false
+	return true
 }
 
 func Atoi(nbr string) (int64, bool) {
@@ -106,7 +106,7 @@ func Plus(a, b string) {
 	PrintConsole(NbrToStr(aa + bb))
 }
 
-func Minus(a, b string) {
+func Deduct(a, b string) {
 	aa, aBool := Atoi(a)
 	if !aBool {
 		PrintConsole("0")
@@ -118,7 +118,7 @@ func Minus(a, b string) {
 		return
 	}
 	if !MinusOverflow(aa, bb) {
-		PrintConsole("0")
+		PrintConsole("-0")
 		return
 	}
 	PrintConsole(NbrToStr(aa - bb))
@@ -153,7 +153,6 @@ func Multiply(a, b string) {
 		PrintConsole("0")
 		return
 	}
-	// fmt.Println(aa, bb,  aa*bb, (1)/bb != aa, MultiplyOverflow(aa, bb))
 	if !MultiplyOverflow(aa, bb, 0) {
 		PrintConsole("0")
 		return
@@ -206,7 +205,7 @@ func main() {
 	if !(IsNumeric(args[0]) && IsNumeric(args[2])) {
 		PrintConsole("0")
 	}
-	funcsArr := []func(string, string){Plus, Minus, Devide, Multiply, Mod}
+	funcsArr := []func(string, string){Plus, Deduct, Devide, Multiply, Mod}
 	operators := []string{"+", "-", "/", "*", "%"}
 	for i, val := range operators {
 		if val == args[1] {
