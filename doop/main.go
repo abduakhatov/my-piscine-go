@@ -194,7 +194,6 @@ func IsNumeric(str string) bool {
 	return true
 }
 
-
 func main() {
 	args := os.Args[1:]
 	argsCount := 0
