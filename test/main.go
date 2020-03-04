@@ -1,14 +1,17 @@
 package main
 
 import (
-	"fmt"
-	piscine ".."
+	hackathon "hackathon"
+
+	"github.com/01-edu/z01"
 )
 
 func main() {
+	result := hackathon.Rot14("Hello How are You")
+	arrayRune := []rune(result)
 
-	result := []string{"a", "A", "1", "b", "B", "2", "c", "C", "3"}
-	piscine.SortWordArr(result)
-
-	fmt.Println(result)
+	for _, s := range arrayRune {
+		z01.PrintRune(s)
+	}
+	z01.PrintRune('\n')
 }
