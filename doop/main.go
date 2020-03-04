@@ -1,6 +1,7 @@
 package main
 
 import (
+	// "fmt"
 	piscine ".."
 	"os"
 )
@@ -36,8 +37,6 @@ func MultplyOverflow(a, b, c int64) bool {
 		return a*b+c < 0
 	} else if a > 0 && c > 0 {
 		return a*b+c > 0
-	} else if c == 0 {
-		return a*b > 0
 	}
 	return true
 }
@@ -53,11 +52,17 @@ func PlusOverflow(a, b int64) bool {
 
 func MinusOverflow(a, b int64) bool {
 	if a < 0 && b < 0 {
+		if b <= a {
+			return a-b >= 0
+		}
 		return a-b < 0
 	} else if a > 0 && b > 0 {
+		if a <= b {
+			return a-b <= 0
+		}
 		return a-b > 0
 	}
-	return true
+	return false
 }
 
 func Atoi(nbr string) (int64, bool) {
@@ -116,13 +121,17 @@ func Minus(a, b string) {
 }
 
 func Devide(a, b string) {
-	aa, aBool := Atoi(a)
-	if !aBool {
+	bb, bBool := Atoi(b)
+	if !bBool {
 		PrintConsole("0")
 		return
 	}
-	bb, bBool := Atoi(b)
-	if !bBool {
+	if bb == 0 {
+		PrintConsole("No division by 0")
+		return
+	}
+	aa, aBool := Atoi(a)
+	if !aBool {
 		PrintConsole("0")
 		return
 	}
@@ -144,17 +153,21 @@ func Multiply(a, b string) {
 		PrintConsole("0")
 		return
 	}
-	PrintConsole(NbrToStr(aa + bb))
+	PrintConsole(NbrToStr(aa * bb))
 }
 
 func Mod(a, b string) {
-	aa, aBool := Atoi(a)
-	if !aBool {
+	bb, bBool := Atoi(b)
+	if !bBool {
 		PrintConsole("0")
 		return
 	}
-	bb, bBool := Atoi(b)
-	if !bBool {
+	if bb == 0 {
+		PrintConsole("No modulo by 0")
+		return
+	}
+	aa, aBool := Atoi(a)
+	if !aBool {
 		PrintConsole("0")
 		return
 	}
@@ -168,10 +181,9 @@ func main() {
 		argsCount++
 	}
 	if argsCount != 3 {
-		PrintConsole("0")
 		return
 	}
-	if !(piscine.IsNumeric(args[0]) || piscine.IsNumeric(args[1])) {
+	if !(piscine.IsNumeric(args[0]) || piscine.IsNumeric(args[2])) {
 		PrintConsole("0")
 	}
 	funcsArr := []func(string, string){Plus, Minus, Devide, Multiply, Mod}
@@ -179,7 +191,8 @@ func main() {
 	for i, val := range operators {
 		if val == args[1] {
 			funcsArr[i](args[0], args[2])
-			break
+			return
 		}
 	}
+	PrintConsole("0")
 }

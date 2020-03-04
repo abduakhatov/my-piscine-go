@@ -38,5 +38,6 @@ func main() {
 		reader := io.TeeReader(os.Stdin, os.Stdout)
 		ioutil.ReadAll(reader)
 		os.Stdin.Close()
+		os.Stdout.Close()
 	}
 }
