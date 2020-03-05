@@ -1,20 +1,15 @@
 package piscine
 
 func Unmatch(arr []int) int {
-	length := 0
-	for range arr {
-		length++
-	}
-	for i := 0; i < length; i++ {
-		hasPair := false
-		for j := 0; j < length; j++ {
-			if arr[i] == arr[j] && i != j {
-				hasPair = true
-				break
+	for i, iVal := range arr {
+		count := 1
+		for j, jVal := range arr {
+			if iVal == jVal && i != j {
+				count++
 			}
 		}
-		if !hasPair {
-			return arr[i]
+		if count%2 == 1 {
+			return iVal
 		}
 	}
 	return -1
