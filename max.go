@@ -1,6 +1,6 @@
 package piscine
 
-func SortByMax(table []int, length int) {
+func SortByMax(table []int) {
 	for i := 0; i < len(table)-1; i++ {
 		for j := i + 1; j < len(table); j++ {
 			if table[i] < table[j] {
@@ -11,10 +11,6 @@ func SortByMax(table []int, length int) {
 }
 
 func Max(arr []int) int {
-	length := 0
-	for range arr {
-		length++
-	}
-	SortByMax(arr, length)
+	SortByMax(arr)
 	return arr[0]
 }

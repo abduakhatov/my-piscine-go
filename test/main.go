@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	arr := []int{1, 2, 3, 1, 2, 3, 4}
-	unmatch := piscine.Unmatch(arr)
-	fmt.Println(unmatch)
+	arrInt := []int{23, 123, 1, 11, 55, 93}
+	max := piscine.Max(arrInt)
+	fmt.Println(max)
 }

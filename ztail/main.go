@@ -3,42 +3,64 @@ package main
 import (
 	"fmt"
 	"os"
-	"io"
+	piscine ".."
 )
 
-// func PrintResult(str string) {
-// 	for _, val := range str {
-// 		z01.PrintRune(val)
-// 	}
-// }
+func ReadFile(offset int, hasOffset bool, fileName string, ) string {
+	file, _ := os.Open("file.txt")
+	defer file.Close()
 
-// func MyReadFile(fileName string) string {
-// 	content, err := ioutil.ReadFile(fileName)
-// 	if err != nil {
-// 		return "error"
-// 	}
-// 	return string(content)
-// }
+	newOffset := int64(0)
+	if hasOffset {
+		newOffset, _ = file.Seek(-1*int64(offset), 2)
+	}
 
-// func main() {
-// 	args := os.Args[1:]
-// 	// abc := "1"
-// 	finish := false
-// 	for _, fileName := range args {
-// 		if _, err := os.Stat(fileName); err != nil {
-// 			PrintResult("open " + fileName + ": no such file or directory\n")
-// 			return
-// 		}
-// 		PrintResult(MyReadFile(fileName))
-// 		finish = true
-// 	}
-// 	if !finish {
-// 		reader := io.TeeReader(os.Stdin, os.Stdout)
-// 		ioutil.ReadAll(reader)
-// 		os.Stdin.Close()
-// 		os.Stdout.Close()
-// 	}
-// }
+	buffer := make([]byte, newOffset)
+	n, _ := file.ReadAt(buffer, newOffset)
+	return string(buffer[:n])
+}
+
+
+func main() {
+	args := os.Args[1:]
+	finish := false
+	hasOption := false
+	hasOffset := false
+	offset := 0
+	fileName := ""
+
+	for _, arg := range args {
+		if arg == "-c" {
+			hasOption = true
+		} else if hasOption && !hasOffset {
+			if isNumeric := piscine.IsNumeric(arg); isNumeric {
+				offset = piscine.Atoi(arg)
+				hasOffset = true
+			} else {
+				fmt.Printf("tail: invalid number of bytes: '%v'", arg)
+				os.Exit(1)
+			}
+		} else {
+			fileName = arg
+		}
+		finish = true
+	}
+
+	if finish {
+		if _, err := os.Stat(fileName); os.IsNotExist(err) {
+			fmt.Println("tail: cannot open '" + fileName + "' for reading: No such file or directory")
+			os.Exit(1)
+		}
+		result := ReadFile(offset, hasOption && hasOffset, fileName)
+		fmt.Printf(result)
+		os.Exit(0)
+		
+	} else {
+		os.Exit(1)
+	}
+}
+
+
 
 // func readFromFile(file *os.File, offset, size int) ([]byte, error) {
 // 	res := make([]byte, size, size)
@@ -48,16 +70,15 @@ import (
 // 	return res, nil
 // }
 
-func main() {
-	// res := make([]byte, 100, size)
-	file, _ := os.Open("file.txt")
-	defer file.Close()
+// func ReadFile(offset int, hasOffset bool, fileName string, ) {
+// 	file, _ := os.Open(fileName)
+// 	defer file.Close()
+// 	newOffset, _ := file.Seek(-1 * int64(offset), 2)
+// 	buffer := make([]byte, newOffset)
+// 	n, _ := file.ReadAt(buffer, newOffset)
+// 	// if err != nil && err != io.EOF {
+// 	// 	panic(err)
+// 	// }
+// 	fmt.Println(string(buffer[:n]))
+// }
 
-	buffer := make([]byte, 1024)
-	n, err := file.ReadAt(buffer, 10)
-	if err != nil && err != io.EOF {
-		panic(err)
-	}
-	fmt.Println(string(buffer[:n]))
-
-}
