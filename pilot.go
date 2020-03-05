@@ -1,9 +1,9 @@
 package piscine
 
-type Craft string
+type Craft int
 
 const (
-	AIRCRAFT1 Craft = "aircraft1"
+	AIRCRAFT1 Craft = 1
 )
 
 type Pilot struct {
