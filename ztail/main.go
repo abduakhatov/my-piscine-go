@@ -1,4 +1,4 @@
-package piscine
+package main
 
 // import (
 // 	"os"
@@ -38,3 +38,15 @@ package piscine
 // 		os.Stdout.Close()
 // 	}
 // }
+wqe
+// func readFromFile(file *os.File, offset, size int) ([]byte, error) {
+// 	res := make([]byte, size, size)
+// 	if _, err := file.ReadAt(res, int64(offset)); err != nil {
+// 		return nil, err
+// 	}
+// 	return res, nil
+// }
+
+func main() {asd
+	res := make([]byte, size, size)
+}
