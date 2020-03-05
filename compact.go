@@ -1,7 +1,5 @@
 package piscine
 
-import "fmt"
-
 func Compact(ptr *[]string) int {
 	res := *ptr
 	count := 0
