@@ -6,9 +6,40 @@ import (
 )
 
 func main() {
+	x := 5
+	y := &x
+	z := &y
+	a := &z
 
-	result := []string{"a", "A", "1", "b", "B", "2", "c", "C", "3"}
-	piscine.AdvancedSortWordArr(result, piscine.Compare)
+	w := 2
+	b := &w
 
-	fmt.Println(result)
+	u := 7
+	e := &u
+	f := &e
+	g := &f
+	h := &g
+	i := &h
+	j := &i
+	c := &j
+
+	k := 6
+	l := &k
+	m := &l
+	n := &m
+	d := &n
+
+	fmt.Println(***a)
+	fmt.Println(*b)
+	fmt.Println(*******c)
+	fmt.Println(****d)
+
+	piscine.Enigma(a, b, c, d)
+
+	fmt.Println("After using Enigma")
+	fmt.Println(***a)
+	fmt.Println(*b)
+	fmt.Println(*******c)
+	fmt.Println(****d)
+
 }
