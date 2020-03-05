@@ -9,10 +9,13 @@ import (
 func ReadFile(offset int, fileName string) string {
 	file, _ := os.Open("file.txt")
 	defer file.Close()
-
 	newOffset, _ := file.Seek(-1*int64(offset), 2)
 
-	buffer := make([]byte, newOffset)
+	buffer := []byte{}
+	for i := int64(0); i < newOffset; i++ {
+		buffer = append(buffer, 0x0)
+	}
+
 	n, _ := file.ReadAt(buffer, newOffset)
 	return string(buffer[:n])
 }
@@ -48,7 +51,7 @@ func main() {
 			os.Exit(1)
 		}
 		if _, err := os.Stat(fileName); os.IsNotExist(err) {
-			fmt.Println("tail: cannot open '" + fileName + "' for reading: No such file or directory")
+			fmt.Printf("tail: cannot open '" + fileName + "' for reading: No such file or directory")
 			os.Exit(1)
 		}
 		result := ReadFile(offset, fileName)
