@@ -1,0 +1,20 @@
+package piscine
+
+func SortByMax(table []int, length int) {
+	for i := 0; i < len(table)-1; i++ {
+		for j := i + 1; j < len(table); j++ {
+			if table[i] < table[j] {
+				table[i], table[j] = table[j], table[i]
+			}
+		}
+	}
+}
+
+func Max(arr []int) int {
+	length := 0
+	for range arr {
+		length++
+	}
+	SortByMax(arr, length)
+	return arr[0]
+}
