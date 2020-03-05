@@ -1,25 +1,21 @@
 package main
 
 import (
+	piscine ".."
 	"fmt"
 	"os"
-	piscine ".."
 )
 
-func ReadFile(offset int, hasOffset bool, fileName string, ) string {
+func ReadFile(offset int, fileName string) string {
 	file, _ := os.Open("file.txt")
 	defer file.Close()
 
-	newOffset := int64(0)
-	if hasOffset {
-		newOffset, _ = file.Seek(-1*int64(offset), 2)
-	}
+	newOffset, _ := file.Seek(-1*int64(offset), 2)
 
 	buffer := make([]byte, newOffset)
 	n, _ := file.ReadAt(buffer, newOffset)
 	return string(buffer[:n])
 }
-
 
 func main() {
 	args := os.Args[1:]
@@ -46,21 +42,23 @@ func main() {
 		finish = true
 	}
 
-	if finish {
+	if finish && fileName != "" {
+		if hasOption && !hasOffset {
+			fmt.Printf("tail: option requires an argument -- 'c'\nTry 'tail --help' for more information.")
+			os.Exit(1)
+		}
 		if _, err := os.Stat(fileName); os.IsNotExist(err) {
 			fmt.Println("tail: cannot open '" + fileName + "' for reading: No such file or directory")
 			os.Exit(1)
 		}
-		result := ReadFile(offset, hasOption && hasOffset, fileName)
+		result := ReadFile(offset, fileName)
 		fmt.Printf(result)
 		os.Exit(0)
-		
+
 	} else {
 		os.Exit(1)
 	}
 }
-
-
 
 // func readFromFile(file *os.File, offset, size int) ([]byte, error) {
 // 	res := make([]byte, size, size)
@@ -81,4 +79,3 @@ func main() {
 // 	// }
 // 	fmt.Println(string(buffer[:n]))
 // }
-
