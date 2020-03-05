@@ -1,6 +1,6 @@
 package hackathon
 
-func Unmatch(arr []int) int {
+func Unmatch2(arr []int) int {
 	length := 0
 	for range arr {
 		length++
