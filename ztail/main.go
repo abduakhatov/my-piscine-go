@@ -1,9 +1,10 @@
 package main
 
-// import (
-// 	"os"
-// 	"fmt"
-// )
+import (
+	"fmt"
+	"io/ioutil"
+	"os"
+)
 
 // func PrintResult(str string) {
 // 	for _, val := range str {
@@ -38,7 +39,7 @@ package main
 // 		os.Stdout.Close()
 // 	}
 // }
-wqe
+
 // func readFromFile(file *os.File, offset, size int) ([]byte, error) {
 // 	res := make([]byte, size, size)
 // 	if _, err := file.ReadAt(res, int64(offset)); err != nil {
@@ -47,6 +48,21 @@ wqe
 // 	return res, nil
 // }
 
-func main() {asd
-	res := make([]byte, size, size)
+func main() {
+	// res := make([]byte, 100, size)
+	file, _ := os.Open("file.txt")
+	var res []byte
+	var res2 []byte
+	if _, err := file.Read(res); err != nil {
+
+	}
+	if _, err := file.ReadAt(res2, int64(100)); err != nil {
+
+	}
+	fmt.Println(res)
+	fmt.Println(file)
+	fmt.Println(res)
+	data, _ := ioutil.ReadAll(file)
+	fmt.Println(string(data))
+
 }
