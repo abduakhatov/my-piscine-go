@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
+	"io"
 )
 
 // func PrintResult(str string) {
@@ -51,18 +51,13 @@ import (
 func main() {
 	// res := make([]byte, 100, size)
 	file, _ := os.Open("file.txt")
-	var res []byte
-	var res2 []byte
-	if _, err := file.Read(res); err != nil {
+	defer file.Close()
 
+	buffer := make([]byte, 1024)
+	n, err := file.ReadAt(buffer, 10)
+	if err != nil && err != io.EOF {
+		panic(err)
 	}
-	if _, err := file.ReadAt(res2, int64(100)); err != nil {
-
-	}
-	fmt.Println(res)
-	fmt.Println(file)
-	fmt.Println(res)
-	data, _ := ioutil.ReadAll(file)
-	fmt.Println(string(data))
+	fmt.Println(string(buffer[:n]))
 
 }
