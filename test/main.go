@@ -6,13 +6,15 @@ import (
 )
 
 func main() {
-	arr := []int{1, 2, 3, 1, 2, 3, 4}
-	unmatch := piscine.Unmatch(arr)
-	fmt.Println(unmatch)
 
+	link := &piscine.List{}
 
-	arr = []int{1, 1, 2, 4, 3, 4, 2, 3, 4}
-	unmatch = piscine.Unmatch(arr)
-	fmt.Println(unmatch)
+	piscine.ListPushBack(link, "Hello")
+	piscine.ListPushBack(link, "man")
+	piscine.ListPushBack(link, "how are you")
 
+	for link.Head != nil {
+		fmt.Println(link.Head.Data)
+		link.Head = link.Head.Next
+	}
 }
