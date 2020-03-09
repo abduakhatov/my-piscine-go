@@ -6,18 +6,15 @@ import (
 )
 
 func main() {
+
 	link := &piscine.List{}
 
-	piscine.ListPushBack(link, "1")
-	piscine.ListPushBack(link, "2")
-	piscine.ListPushBack(link, "3")
-	piscine.ListPushBack(link, "5")
+	piscine.ListPushBack(link, "Hello")
+	piscine.ListPushBack(link, "man")
+	piscine.ListPushBack(link, "how are you")
 
-	piscine.ListForEach(link, piscine.Add2_node)
-
-	it := link.Head
-	for it != nil {
-		fmt.Println(it.Data)
-		it = it.Next
+	for link.Head != nil {
+		fmt.Println(link.Head.Data)
+		link.Head = link.Head.Next
 	}
 }
