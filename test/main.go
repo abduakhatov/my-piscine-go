@@ -7,17 +7,13 @@ import (
 )
 
 func main() {
-
 	link := &piscine.List{}
+	link2 := &piscine.List{}
 
-	piscine.ListPushFront(link, "Hello")
-	piscine.ListPushFront(link, "man")
-	piscine.ListPushFront(link, "how are you")
+	piscine.ListPushBack(link, "three")
+	piscine.ListPushBack(link, 3)
+	piscine.ListPushBack(link, "1")
 
-	it := link.Head
-	for it != nil {
-		fmt.Print(it.Data, " ")
-		it = it.Next
-	}
-	fmt.Println()
+	fmt.Println(piscine.ListLast(link))
+	fmt.Println(piscine.ListLast(link2))
 }
