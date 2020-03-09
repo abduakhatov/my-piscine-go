@@ -13,7 +13,8 @@ func insert(head *node, data int) *node {
 	fmt.Println("n:", n, &n, *n)
 	if head != nil {
 		n.next = head
-	} 		
+	}
+	fmt.Println("n2:", n, &n, *n)
 	return n
 }
 
