@@ -5,9 +5,9 @@ func ListAt(l *NodeL, pos int) *NodeL {
 	node := l
 	for ; node != nil; count++ {
 		if count == pos {
-			break
+			return node.Next
 		}
 		node = node.Next
 	}
-	return node.Next
+	return nil
 }
