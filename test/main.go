@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+
 	piscine ".."
 )
 
@@ -9,12 +10,14 @@ func main() {
 
 	link := &piscine.List{}
 
-	piscine.ListPushBack(link, "Hello")
-	piscine.ListPushBack(link, "man")
-	piscine.ListPushBack(link, "how are you")
+	piscine.ListPushFront(link, "Hello")
+	piscine.ListPushFront(link, "man")
+	piscine.ListPushFront(link, "how are you")
 
-	for link.Head != nil {
-		fmt.Println(link.Head.Data)
-		link.Head = link.Head.Next
+	it := link.Head
+	for it != nil {
+		fmt.Print(it.Data, " ")
+		it = it.Next
 	}
+	fmt.Println()
 }
