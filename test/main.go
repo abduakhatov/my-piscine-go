@@ -16,4 +16,12 @@ func main() {
 	fmt.Println(piscine.ListAt(link.Head, 3).Data)
 	fmt.Println(piscine.ListAt(link.Head, 1).Data)
 	fmt.Println(piscine.ListAt(link.Head, 7))
+
+	fmt.Println()
+
+	piscine.ListPushBack(link, "I")
+	piscine.ListPushBack(link, "1")
+	piscine.ListPushBack(link, 2)
+	piscine.ListPushBack(link, "something")
+	fmt.Println(piscine.ListAt(link.Head, 4).Data)
 }

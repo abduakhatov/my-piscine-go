@@ -2,13 +2,12 @@ package piscine
 
 func ListAt(l *NodeL, pos int) *NodeL {
 	count := 1
-	n := l
-	for n != nil {
+	node := l
+	for ; node != nil; count++ {
 		if count == pos {
 			break
 		}
-		n = n.Next
-		count++
+		node = node.Next
 	}
-	return n
+	return node.Next
 }
