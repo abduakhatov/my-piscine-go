@@ -6,14 +6,29 @@ import (
 	piscine ".."
 )
 
+type List = piscine.List
+type Node = piscine.NodeL
+
+func PrintList(l *List) {
+	link := l.Head
+	for link != nil {
+		fmt.Print(link.Data, " -> ")
+		link = link.Next
+	}
+	fmt.Println(nil)
+}
+
 func main() {
-	link := &piscine.List{}
-	link2 := &piscine.List{}
+	link := &List{}
 
-	piscine.ListPushBack(link, "three")
-	piscine.ListPushBack(link, 3)
-	piscine.ListPushBack(link, "1")
+	piscine.ListPushBack(link, "I")
+	piscine.ListPushBack(link, 1)
+	piscine.ListPushBack(link, "something")
+	piscine.ListPushBack(link, 2)
 
-	fmt.Println(piscine.ListLast(link))
-	fmt.Println(piscine.ListLast(link2))
+	fmt.Println("------list------")
+	PrintList(link)
+	piscine.ListClear(link)
+	fmt.Println("------updated list------")
+	PrintList(link)
 }
