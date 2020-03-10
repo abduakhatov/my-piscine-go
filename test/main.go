@@ -6,8 +6,8 @@ import (
 	piscine ".."
 )
 
-func PrintList(l *piscine.List) {
-	it := l.Head
+func PrintList(l *piscine.NodeI) {
+	it := l
 	for it != nil {
 		fmt.Print(it.Data, " -> ")
 		it = it.Next
@@ -15,26 +15,28 @@ func PrintList(l *piscine.List) {
 	fmt.Print(nil, "\n")
 }
 
+func listPushBack(l *piscine.NodeI, data int) *piscine.NodeI {
+	n := &piscine.NodeI{Data: data}
+
+	if l == nil {
+		return n
+	}
+	iterator := l
+	for iterator.Next != nil {
+		iterator = iterator.Next
+	}
+	iterator.Next = n
+	return l
+}
+
 func main() {
-	link := &piscine.List{}
-	link2 := &piscine.List{}
+	var link *piscine.NodeI
 
-	piscine.ListPushBack(link, "a")
-	piscine.ListPushBack(link, "b")
-	piscine.ListPushBack(link, "c")
-	piscine.ListPushBack(link, "d")
-	piscine.ListPushBack(link, nil)
-	fmt.Println("-----first List------")
-	PrintList(link)
+	link = listPushBack(link, 5)
+	link = listPushBack(link, 4)
+	link = listPushBack(link, 3)
+	link = listPushBack(link, 2)
+	link = listPushBack(link, 1)
 
-	piscine.ListPushBack(link2, "e")
-	piscine.ListPushBack(link2, "f")
-	piscine.ListPushBack(link2, "g")
-	piscine.ListPushBack(link2, "h")
-	fmt.Println("-----second List------")
-	PrintList(link2)
-
-	fmt.Println("-----Merged List-----")
-	piscine.ListMerge(link, link2)
-	PrintList(link)
+	PrintList(piscine.ListSort(link))
 }
