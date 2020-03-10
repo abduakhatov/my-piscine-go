@@ -23,6 +23,7 @@ func main() {
 	piscine.ListPushBack(link, "b")
 	piscine.ListPushBack(link, "c")
 	piscine.ListPushBack(link, "d")
+	piscine.ListPushBack(link, nil)
 	fmt.Println("-----first List------")
 	PrintList(link)
 
