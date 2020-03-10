@@ -1,6 +1,5 @@
 package piscine
 
-
 func IsPositive_node(node *NodeL) bool {
 	switch node.Data.(type) {
 	case int, float32, float64, byte:

@@ -6,20 +6,43 @@ import (
 	piscine ".."
 )
 
+func PrintElem(node *piscine.NodeL) {
+	fmt.Println(node.Data)
+}
+
+func StringToInt(node *piscine.NodeL) {
+	node.Data = 2
+}
+
+func PrintList(l *piscine.List) {
+	it := l.Head
+	for it != nil {
+		fmt.Print(it.Data, "->")
+		it = it.Next
+	}
+	fmt.Print("nil", "\n")
+}
+
 func main() {
 	link := &piscine.List{}
-	link2 := &piscine.List{}
 
-	// piscine.ListPushBack(link, "three")
-	// piscine.ListPushBack(link, 3)
-	// piscine.ListPushBack(link, "1")
+	piscine.ListPushBack(link, 1)
+	piscine.ListPushBack(link, "hello")
+	piscine.ListPushBack(link, 3)
+	piscine.ListPushBack(link, "there")
+	piscine.ListPushBack(link, 23)
+	piscine.ListPushBack(link, "!")
+	piscine.ListPushBack(link, 54)
 
-	piscine.ListPushBack(link, -2381620042740041718)
-	piscine.ListPushBack(link, -2381620042740041718)
-	piscine.ListPushBack(link, 1223605871337147087)
-	piscine.ListPushBack(link, 3026360979856967082)
-	piscine.ListPushBack(link, nil)
+	PrintList(link)
 
-	fmt.Println(piscine.ListLast(link))
-	fmt.Println(piscine.ListLast(link2))
+	fmt.Println("--------function applied--------")
+	piscine.ListForEachIf(link, PrintElem, piscine.IsPositive_node)
+
+	piscine.ListForEachIf(link, StringToInt, piscine.IsNotNumeric_node)
+
+	fmt.Println("--------function applied--------")
+	PrintList(link)
+
+	fmt.Println()
 }

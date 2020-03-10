@@ -8,7 +8,7 @@ func ListReverse(l *List) {
 	for ; tmp.Head != nil; tmp.Head = tmp.Head.Next {
 		ListPushFront(newList, tmp.Head.Data)
 	}
-	for ;l.Head != nil; l.Head = l.Head.Next {
+	for ; l.Head != nil; l.Head = l.Head.Next {
 		fmt.Println(l.Head.Data, "-")
 	}
 	l.Head = newList.Head
