@@ -11,7 +11,7 @@ func BtreeAtoi(nbr string) int {
 	if nbr != "" && nbr[0] == '-' {
 		nbr = nbr[1:]
 		sign *= -1
-	} else if nbr[0] == '+' {
+	} else if nbr != "" && nbr[0] == '+' {
 		nbr = nbr[1:]
 	}
 	for _, digit := range nbr {
