@@ -1,9 +1,8 @@
 package piscine
 
-
 type TreeNode struct {
 	Left, Right, Parent *TreeNode
-	Data                 string
+	Data                string
 }
 
 func BTreeInsertData(root *TreeNode, data string) *TreeNode {
@@ -11,7 +10,10 @@ func BTreeInsertData(root *TreeNode, data string) *TreeNode {
 		return &TreeNode{Data: data}
 	}
 	if root.Data > data {
-		
+		root.Left = BTreeInsertData(root.Left, data)
+	} else {
+		root.Right = BTreeInsertData(root.Right, data)
 	}
-
+	root.Parent = root.Data
+	return root
 }
