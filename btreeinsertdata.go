@@ -11,9 +11,10 @@ func BTreeInsertData(root *TreeNode, data string) *TreeNode {
 	}
 	if root.Data > data {
 		root.Left = BTreeInsertData(root.Left, data)
+		root.Left.Parent = root
 	} else {
 		root.Right = BTreeInsertData(root.Right, data)
+		root.Right.Parent = root
 	}
-	root.Parent = &TreeNode{Data: root.Data}
 	return root
 }
