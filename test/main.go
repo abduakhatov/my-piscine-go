@@ -26,7 +26,7 @@ func main() {
 	piscine.BTreeInsertData(root, "02")
 	piscine.BTreeInsertData(root, "03")
 	piscine.BTreeInsertData(root, "00")
-	root.Left.Left.Data = "123"
+	// root.Left.Left.Data = "123"
 	// PrintTree(root)
 	// fmt.Println(root.Left.Left.Data)
 	fmt.Println(piscine.BTreeIsBinary(root))

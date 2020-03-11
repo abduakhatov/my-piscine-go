@@ -5,9 +5,9 @@ func BTreeIsBinary(root *TreeNode) bool {
 		return true
 	}
 	if root.Parent != nil {
-		if root.Parent.Data > root.Data && root == root.Parent.Left {
+		if root.Parent.Data <= root.Data && root == root.Parent.Left { // update here
 			return false
-		} else if root.Parent.Data <= root.Data && root == root.Parent.Right {
+		} else if root.Parent.Data > root.Data && root == root.Parent.Right { // update here
 			return false
 		}
 	}
