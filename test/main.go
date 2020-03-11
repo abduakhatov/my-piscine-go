@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	root := &piscine.TreeNode{Data: "40"}
+	root := &piscine.TreeNode{Data: "04"}
 	piscine.BTreeInsertData(root, "07")
 	piscine.BTreeInsertData(root, "12")
 	piscine.BTreeInsertData(root, "05")
@@ -18,7 +18,6 @@ func main() {
 	piscine.BTreeInsertData(root, "00")
 	root.Left.Left.Data = "123"
 
-	fmt.Println(root.Left.Left.Data)
-
-	// fmt.Println(piscine.BTreeIsBinary(root))
+	// fmt.Println(root.Left.Left.Data)
+	fmt.Println(piscine.BTreeIsBinary(root))
 }
