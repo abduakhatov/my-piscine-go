@@ -14,5 +14,4 @@ func main() {
 	fmt.Println(root.Data)
 	fmt.Println(root.Right.Left.Data)
 	fmt.Println(root.Right.Data)
-
 }
