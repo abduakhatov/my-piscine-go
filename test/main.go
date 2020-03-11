@@ -29,5 +29,5 @@ func main() {
 	root.Left.Left.Data = "123"
 	// PrintTree(root)
 	// fmt.Println(root.Left.Left.Data)
-	// fmt.Println(piscine.BTreeIsBinary(root))
+	fmt.Println(piscine.BTreeIsBinary(root))
 }
