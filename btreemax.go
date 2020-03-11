@@ -1,16 +1,16 @@
 package piscine
-import "fmt"
+// import "fmt"
 func BTreeMax(root *TreeNode) *TreeNode {
 	if root == nil {
 		return nil
 	}
-	max := root
-	if res := BTreeMax(root.Left); res != nil && res.Data > max.Data {
-		max = res
+	
+	left := BTreeMax(root.Left)
+	if left == nil {
+		left = root
 	}
-	if res := BTreeMax(root.Right); res != nil && res.Data > max.Data {
-		max = res
+	if right := BTreeMax(root.Right); right != nil && right.Data > left.Data {
+		left = right
 	}
-	fmt.Println(max.Data)
-	return max
+	return left
 }
