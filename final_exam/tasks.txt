@@ -15,24 +15,7 @@ https://public.01-edu.org/subjects/doop.en
                
 ],
 
-https://public.01-edu.org/subjects/printhex.en
-[
-                  "len",
-                  "--cast",
-                  "github.com/01-edu/z01.PrintRune",
-                  "os.*",
-                  "strconv.*"
-               
-],
 
-https://public.01-edu.org/subjects/hiddenp.en
-[
-                  "len",
-                  "--cast",
-                  "os.Args",
-                  "github.com/01-edu/z01.PrintRune"
-               
-],
 
 https://public.01-edu.org/subjects/rostring.en
 [
