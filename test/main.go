@@ -35,23 +35,49 @@ package main
 
 import (
 	"fmt"
+
 	piscine ".."
 )
 
-func main() {
-	root := &piscine.TreeNode{Data: "04"}
-	piscine.BTreeInsertData(root, "5")
-	piscine.BTreeInsertData(root, "60")
-	piscine.BTreeInsertData(root, "33")
-	piscine.BTreeInsertData(root, "12")
-	piscine.BTreeInsertData(root, "15")
+func PrintList(l *piscine.NodeI) {
+	it := l
+	for it != nil {
+		fmt.Print(it.Data, " -> ")
+		it = it.Next
+	}
+	fmt.Print(nil, "\n")
+}
 
-	piscine.BTreeInsertData(root, "01")
-	piscine.BTreeInsertData(root, "02")
-	piscine.BTreeInsertData(root, "03")
-	node := piscine.BTreeSearchItem(root, "03")
-	replacement := &piscine.TreeNode{Data: "3"}
-	root = piscine.BTreeTransplant(root, node, replacement)
-	piscine.BTreeApplyInorder(root, fmt.Println)
+func listPushBack(l *piscine.NodeI, data int) *piscine.NodeI {
+	n := &piscine.NodeI{Data: data}
+
+	if l == nil {
+		return n
+	}
+	iterator := l
+	for iterator.Next != nil {
+		iterator = iterator.Next
+	}
+	iterator.Next = n
+	return l
+}
+
+func main() {
+	var link *piscine.NodeI
+	var link2 *piscine.NodeI
+
+	link = listPushBack(link, 3)
+	link = listPushBack(link, 5)
+	link = listPushBack(link, 7)
+
+	link2 = listPushBack(link2, -2)
+	link2 = listPushBack(link2, 9)
+
+	// PrintList(link)
+	// PrintList(link2)
+
+	// PrintList(piscine.SortListInsert(link, -2))
+
+	PrintList(piscine.SortedListMerge(link2, link))
 }
 
