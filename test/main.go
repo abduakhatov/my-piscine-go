@@ -40,17 +40,18 @@ import (
 
 func main() {
 	root := &piscine.TreeNode{Data: "04"}
-		piscine.BTreeInsertData(root, "07")
-		piscine.BTreeInsertData(root, "12")
-		piscine.BTreeInsertData(root, "05")
-		piscine.BTreeInsertData(root, "10")
-	
-		piscine.BTreeInsertData(root, "01")
-		piscine.BTreeInsertData(root, "03")
-		piscine.BTreeInsertData(root, "04")
-		piscine.BTreeInsertData(root, "00")
-		min := piscine.BTreeMin(root)
-	max := piscine.BTreeMax(root)
-	fmt.Println(max.Data, min.Data)
+	piscine.BTreeInsertData(root, "07")
+	piscine.BTreeInsertData(root, "12")
+	piscine.BTreeInsertData(root, "05")
+	piscine.BTreeInsertData(root, "10")
+
+	piscine.BTreeInsertData(root, "01")
+	piscine.BTreeInsertData(root, "03")
+	piscine.BTreeInsertData(root, "04")
+	piscine.BTreeInsertData(root, "00")
+	node := piscine.BTreeSearchItem(root, "03")
+	replacement := &piscine.TreeNode{Data: "3"}
+	root = piscine.BTreeTransplant(root, node, replacement)
+	piscine.BTreeApplyInorder(root, fmt.Println)
 }
 
