@@ -29,7 +29,7 @@ func BTreeInsertData(root *TreeNode, data string) *TreeNode {
 		return &TreeNode{Data: data}
 	}
 	// fmt.Println(root.Data, data, BtreeAtoi(root.Data) > BtreeAtoi(data), BtreeAtoi(root.Data) <= BtreeAtoi(data))
-	if BtreeAtoi(root.Data) <= BtreeAtoi(data) {
+	if root.Data <= data {
 		root.Right = BTreeInsertData(root.Right, data)
 		root.Right.Parent = root
 	} else {
