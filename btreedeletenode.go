@@ -5,13 +5,14 @@ func BTreeDeleteNode(root, node *TreeNode) *TreeNode {
 		return nil
 	}
 	if root == node {
-
 		if root.Right != nil {
-			root.Data = root.Right.Data
-			node = root.Right
+			min := BTreeMin(root.Right)
+			root.Data = min.Data
+			node = min
 		} else if root.Left != nil {
-			root.Data = root.Left.Data
-			node = root.Left
+			max := BTreeMax(root.Left)
+			root.Data = max.Data
+			node = max
 		} else {
 			return nil
 		}
