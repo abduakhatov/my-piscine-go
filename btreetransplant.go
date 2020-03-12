@@ -6,5 +6,9 @@ func BTreeTransplant(root, node, rplc *TreeNode) *TreeNode {
 	}
 	if root == node {
 		root.Data = rplc.Data
+	} else {
+		root.Left = BTreeTransplant(root.Left, node, rplc)
+		root.Right = BTreeTransplant(root.Right, node, rplc)
 	}
+	return root
 }
