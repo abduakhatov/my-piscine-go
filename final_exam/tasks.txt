@@ -1,0 +1,97 @@
+
+
+
++https://public.01-edu.org/subjects/rostring.en
+[
+                  "os.Args",
+                  "make",
+                  "len",
+                  "--cast",
+                  "github.com/01-edu/z01.PrintRune"
+               
+]
+
++https://public.01-edu.org/subjects/splitprog.en
+### READ Previous
+[
+                  "fmt.*",
+                  "len",
+                  "os.Args",
+                  "--cast",
+                  "make"
+               
+]
+
++https://public.01-edu.org/subjects/revwstr.en
+[
+                  "os.Args",
+                  "len",
+                  "--cast",
+                  "github.com/01-edu/z01.PrintRune"
+               
+]
+
++https://public.01-edu.org/subjects/addlinkednumbers.en
+
++https://public.01-edu.org/subjects/anagram.en
+                  "len",
+                  "make"            
+]
++https://public.01-edu.org/subjects/changeorder.en
+
++https://public.01-edu.org/subjects/inverttree.en
+
++https://public.01-edu.org/subjects/lcm.en
+
++https://public.01-edu.org/subjects/nauuo.en
+
++https://public.01-edu.org/subjects/reverse.en
+
++https://public.01-edu.org/subjects/sametree.en
+
++https://public.01-edu.org/subjects/sortll.en
+[
+                  "github.com/01-edu/z01.PrintRune",
+                  "os.*",
+                  "len",
+                  "make"
+               
+]
++https://public.01-edu.org/subjects/balancedstring.en
+[
+                  "fmt.*",
+                  "os.*",
+                  "len"
+               
+]
+
+
+
+
+
+https://public.01-edu.org/subjects/merge.en
+
+https://public.01-edu.org/subjects/brainfuck.en
+[
+                  "os.*",
+                  "len",
+                  "--cast",
+                  "github.com/01-edu/z01.PrintRune"            
+]
+
+https://public.01-edu.org/subjects/rot13.en
+"--cast",
+"github.com/01-edu/z01.PrintRune",
+"os.*",
+"len",
+"--no-lit=[b-mB-M]"
+
+https://public.01-edu.org/subjects/doop.en
+[
+                  "os.*",
+                  "strconv.Atoi",
+                  "fmt.*",
+                  "--cast",
+                  "len"
+               
+],

@@ -7,14 +7,14 @@ type TreeNode struct {
 }
 */
 
-func BTreeApplyInorder(root *TreeNode, f func(...interface{}) (int, error)) {
-	// left
+func BTreeApplyPreorder(root *TreeNode, f func(...interface{}) (int, error)) {
 	// visit
+	// left
 	// right
 	if root == nil {
 		return
 	}
-	BTreeApplyInorder(root.Left, f)
 	f(root.Data)
-	BTreeApplyInorder(root.Right, f)
+	BTreeApplyPreorder(root.Left, f)
+	BTreeApplyPreorder(root.Right, f)
 }
